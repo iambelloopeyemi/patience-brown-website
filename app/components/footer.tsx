@@ -4,32 +4,61 @@ import Link from "next/link";
 export default function Footer() {
   const currentYear: number = new Date().getFullYear();
   return (
-    <footer>
-      <div>
+    <footer className="bg-yinmn-blue py-[60px] text-seasalt">
+      <div className="flex flex-col items-center gap-8">
         <div>
-          <Image src="" alt="" />
+          <Image
+            src="/website-logo.webp"
+            width={200}
+            height={112}
+            alt="website-logo"
+          />
         </div>
-        <ul>
+        <ul className="flex flex-col items-center gap-4">
           <li>
-            <Link href={`#`}>about</Link>
+            <Link
+              href={`#`}
+              className="uppercase tracking-widest font-semibold hover:underline"
+            >
+              about
+            </Link>
           </li>
           <li>
-            <Link href={`#`}>process</Link>
+            <Link
+              href={`#`}
+              className="uppercase tracking-widest font-semibold hover:underline"
+            >
+              process
+            </Link>
           </li>
           <li>
-            <Link href={`#`}>schedule a call</Link>
+            <Link
+              href={`#`}
+              className="uppercase tracking-widest font-semibold hover:underline"
+            >
+              schedule a call
+            </Link>
           </li>
         </ul>
-        <ul>
-          <li>
-            <Link href={`#`}>Privacy Policy</Link>
-          </li>
-          <li>
-            <Link href={`#`}>Terms</Link>
-          </li>
-        </ul>
-        <p>
-          <strong>patience brown © {currentYear}</strong>
+        <div className="text-center">
+          <Link
+            href={`#`}
+            className="font-medium tracking-wide hover:underline"
+          >
+            Privacy Policy
+          </Link>
+          &nbsp;•&nbsp;
+          <Link
+            href={`#`}
+            className="font-medium tracking-wide hover:underline"
+          >
+            Terms
+          </Link>
+        </div>
+        <p className="text-center">
+          <span className="text-sm tracking-tight">
+            Patience Brown © {currentYear}
+          </span>
         </p>
       </div>
     </footer>
