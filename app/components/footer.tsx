@@ -11,13 +11,13 @@ export default function Footer() {
         </div>
         <ul>
           <li>
-            <Link href={`#`}></Link>
+            <Link href={`#`}>about</Link>
           </li>
           <li>
-            <Link href={`#`}></Link>
+            <Link href={`#`}>process</Link>
           </li>
           <li>
-            <Link href={`#`}></Link>
+            <Link href={`#`}>schedule a call</Link>
           </li>
         </ul>
         <ul>
