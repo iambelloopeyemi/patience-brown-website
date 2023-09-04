@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
+  const currentYear: number = new Date().getFullYear();
   return (
     <footer>
       <div>
@@ -28,7 +29,7 @@ export default function Footer() {
           </li>
         </ul>
         <p>
-          <strong></strong>
+          <strong>patience brown © {currentYear}</strong>
         </p>
       </div>
     </footer>
