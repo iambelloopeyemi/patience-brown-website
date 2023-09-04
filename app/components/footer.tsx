@@ -22,10 +22,10 @@ export default function Footer() {
         </ul>
         <ul>
           <li>
-            <Link href={`#`}></Link>
+            <Link href={`#`}>Privacy Policy</Link>
           </li>
           <li>
-            <Link href={`#`}></Link>
+            <Link href={`#`}>Terms</Link>
           </li>
         </ul>
         <p>
