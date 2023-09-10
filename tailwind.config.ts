@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         seasalt: "#F9F9F9",
+        jet: "#353639",
         "yinmn-blue": "#294D78",
       },
     },
