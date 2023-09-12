@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        ecru: "#D4B888",
         seasalt: "#F9F9F9",
         jet: "#353639",
         "yinmn-blue": "#294D78",
