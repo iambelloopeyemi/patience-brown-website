@@ -27,8 +27,8 @@ export default function Header(): JSX.Element {
         </div>
         <ul className="hidden lg:flex items-center gap-8">
           <Nav
-            activeAnchorTagClass="uppercase font-bold text-[15px] tracking-widest leading-[14px] hover:scale-105 text-yinmn-blue"
-            anchorTagClass="uppercase font-bold text-[15px] tracking-widest leading-[14px] hover:text-yinmn-blue hover:scale-105"
+            activeAnchorTagClass="uppercase font-bold text-[14px] tracking-widest leading-[14px] hover:scale-105 text-yinmn-blue"
+            anchorTagClass="uppercase font-bold text-[14px] tracking-widest leading-[14px] hover:text-yinmn-blue hover:scale-105"
           />
         </ul>
         <button
@@ -44,7 +44,7 @@ export default function Header(): JSX.Element {
           className="absolute left-0 right-0 top-16 border-b py-4"
         >
           <ul className="lg:hidden flex flex-col items-center gap-8">
-            <Nav anchorTagClass="uppercase font-bold text-[13px] sm:text-[15px] tracking-widest leading-[14px] hover:text-yinmn-blue" />
+            <Nav anchorTagClass="uppercase font-bold text-[13px] sm:text-[14px] tracking-widest leading-[14px] hover:text-yinmn-blue" />
           </ul>
         </nav>
       )}
