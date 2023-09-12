@@ -1,9 +1,9 @@
 "use client";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 interface NavProps {
-  activeAnchorTagClass: string;
+  activeAnchorTagClass?: string;
   anchorTagClass: string;
 }
 
@@ -11,11 +11,11 @@ export default function Nav({
   activeAnchorTagClass,
   anchorTagClass,
 }: NavProps): JSX.Element {
-  const pathname = usePathname();
+  const pathname: string = usePathname();
   const links: string[] = ["about", "process", "schedule-a-call"];
   return (
     <>
-      {links.map((link) => {
+      {links.map((link: string) => {
         const isActive: boolean = pathname === `/${link}`;
         const linkText: string = link.replace(/-/g, " ");
 
