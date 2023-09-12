@@ -6,7 +6,7 @@ import Button from "./components/button";
 export default function Home(): JSX.Element {
   return (
     <section className="grid lg:grid-cols-2 bg-yinmn-blue">
-      <div className="col-span-1 max-lg:order-2 flex justify-center items-center px-4 sm:px-8 lg:px-10 py-16">
+      <div className="col-span-1 max-lg:order-2 flex justify-center items-center px-4 sm:px-8 lg:px-10 py-16 lg:py-20">
         <article
           className={`${cormorant_garamond.className} text-white flex flex-col gap-10`}
         >

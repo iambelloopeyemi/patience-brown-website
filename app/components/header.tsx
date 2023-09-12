@@ -1,34 +1,69 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { montserrat } from "../utils/font";
 import { Bars, XMark } from "./icons";
-import Nav from "./nav";
 import websiteLogo from "../assets/website-logo.png";
+import Nav from "./nav";
 
 export default function Header(): JSX.Element {
   const [isOpen, setOpen] = useState<boolean>(false);
+  const [headerStyle, setHeaderStyle] = useState<string>("");
+  const [logoStyle, setLogoStyle] = useState<string>("");
+  const [navFontStyle, setNavFontStyle] = useState<string>("");
 
   const handleToggle = (): void => {
     setOpen((previousState: boolean) => !previousState);
   };
+
+  useEffect(() => {
+    const handleScroll = (): void => {
+      const heroSectionHeight: number =
+        document.getElementById("header")!.offsetHeight;
+      const scrolled: number = window.scrollY;
+
+      const headerStyle =
+        scrolled > heroSectionHeight
+          ? "bg-white px-4 sm:px-8 lg:px-16 z-50 lg:py-1 lg:fixed left-0 right-0 ease-in-out"
+          : "bg-white px-4 sm:px-8 lg:px-16 py-2 z-50";
+
+      const logoStyle =
+        scrolled > heroSectionHeight ? "w-40 h-auto" : "w-40 sm:w-60 h-auto";
+
+      const navFontStyle =
+        scrolled > heroSectionHeight
+          ? "uppercase font-semibold text-xs tracking-widest hover:text-yinmn-blue"
+          : "uppercase font-bold text-sm tracking-widest hover:text-yinmn-blue";
+
+      setHeaderStyle(headerStyle);
+      setLogoStyle(logoStyle);
+      setNavFontStyle(navFontStyle);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <header
+      id="header"
       className={`${isOpen ? null : "border-b"}
       ${montserrat.className}
-      bg-white px-4 sm:px-8 lg:px-16 py-4 z-50`}
+      ${headerStyle}`}
     >
       <nav className="flex items-center justify-between">
-        <div className="w-44 sm:w-64 h-auto">
+        <div className={`${logoStyle}`}>
           <Link href={`/`}>
             <Image src={websiteLogo} alt="website logo" />
           </Link>
         </div>
         <ul className="hidden lg:flex items-center gap-8">
           <Nav
-            activeAnchorTagClass="uppercase font-bold text-[14px] tracking-widest leading-[14px] hover:scale-105 text-yinmn-blue"
-            anchorTagClass="uppercase font-bold text-[14px] tracking-widest leading-[14px] hover:text-yinmn-blue"
+            activeAnchorTagClass={`${navFontStyle} text-yinmn-blue`}
+            anchorTagClass={`${navFontStyle}`}
           />
         </ul>
         <button
@@ -41,12 +76,12 @@ export default function Header(): JSX.Element {
       {isOpen && (
         <nav
           onClick={handleToggle}
-          className="absolute left-0 right-0 top-16 bg-white border-b py-4"
+          className="absolute left-0 right-0 top-16 bg-white border-b py-5"
         >
-          <ul className="lg:hidden flex flex-col items-center gap-8">
+          <ul className="lg:hidden flex flex-col items-center gap-5">
             <Nav
-              activeAnchorTagClass="uppercase font-bold text-[13px] sm:text-[14px] tracking-widest leading-[14px] text-yinmn-blue"
-              anchorTagClass="uppercase font-bold text-[13px] sm:text-[14px] tracking-widest leading-[14px]"
+              activeAnchorTagClass="uppercase font-bold text-xs sm:text-sm tracking-widest text-yinmn-blue"
+              anchorTagClass="uppercase font-bold text-xs sm:text-sm tracking-widest"
             />
           </ul>
         </nav>
