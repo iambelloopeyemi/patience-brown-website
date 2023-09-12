@@ -17,7 +17,7 @@ export default function Header(): JSX.Element {
     <header
       className={`${isOpen ? null : "border-b"}
       ${montserrat.className}
-      bg-white px-4 sm:px-8 lg:px-16 py-4`}
+      bg-white px-4 sm:px-8 lg:px-16 py-4 z-50`}
     >
       <nav className="flex items-center justify-between">
         <div className="w-44 sm:w-64 h-auto">
@@ -28,7 +28,7 @@ export default function Header(): JSX.Element {
         <ul className="hidden lg:flex items-center gap-8">
           <Nav
             activeAnchorTagClass="uppercase font-bold text-[14px] tracking-widest leading-[14px] hover:scale-105 text-yinmn-blue"
-            anchorTagClass="uppercase font-bold text-[14px] tracking-widest leading-[14px] hover:text-yinmn-blue hover:scale-105"
+            anchorTagClass="uppercase font-bold text-[14px] tracking-widest leading-[14px] hover:text-yinmn-blue"
           />
         </ul>
         <button
@@ -41,10 +41,13 @@ export default function Header(): JSX.Element {
       {isOpen && (
         <nav
           onClick={handleToggle}
-          className="absolute left-0 right-0 top-16 border-b py-4"
+          className="absolute left-0 right-0 top-16 bg-white border-b py-4"
         >
           <ul className="lg:hidden flex flex-col items-center gap-8">
-            <Nav anchorTagClass="uppercase font-bold text-[13px] sm:text-[14px] tracking-widest leading-[14px] hover:text-yinmn-blue" />
+            <Nav
+              activeAnchorTagClass="uppercase font-bold text-[13px] sm:text-[14px] tracking-widest leading-[14px] text-yinmn-blue"
+              anchorTagClass="uppercase font-bold text-[13px] sm:text-[14px] tracking-widest leading-[14px]"
+            />
           </ul>
         </nav>
       )}
