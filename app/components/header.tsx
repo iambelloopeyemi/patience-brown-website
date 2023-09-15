@@ -76,7 +76,7 @@ export default function Header(): JSX.Element {
       {isOpen && (
         <nav
           onClick={handleToggle}
-          className="absolute left-0 right-0 top-16 bg-white border-b py-5"
+          className="absolute left-0 right-0 top-12 bg-white border-b py-5"
         >
           <ul className="lg:hidden flex flex-col items-center gap-5">
             <Nav
