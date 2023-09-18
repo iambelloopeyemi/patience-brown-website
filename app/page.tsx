@@ -4,7 +4,7 @@ import ConsultationSection from "./components/home/ConsultationSection";
 import SectionOne from "./components/home/sectionOne";
 import SectionThree from "./components/home/sectionThree";
 import SectionTwo from "./components/home/sectionTwo";
-import Testimonial from "./components/home/testimonial";
+import TestimonialSection from "./components/home/TestimonialSection";
 
 export default function Home(): JSX.Element {
   return (
@@ -13,7 +13,7 @@ export default function Home(): JSX.Element {
       <SectionOne />
       <SectionTwo />
       <SectionThree />
-      <Testimonial />
+      <TestimonialSection />
       <ConsultationSection />
       <EmpowermentSection />
     </>
