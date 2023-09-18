@@ -1,46 +1,18 @@
-import Image from "next/image";
 import Link from "next/link";
+import Nav from "./nav";
+import Logo from "./logo";
 
-export default function Footer() {
+export default function Footer(): JSX.Element {
   const currentYear: number = new Date().getFullYear();
+
   return (
-    <footer className="bg-yinmn-blue py-[60px] text-seasalt">
-      <div className="flex flex-col items-center gap-8">
-        <div>
-          <Image
-            src="/website-logo.webp"
-            width={200}
-            height={112}
-            alt="website-logo"
-          />
-        </div>
-        <ul className="flex flex-col items-center gap-4">
-          <li>
-            <Link
-              href={`#`}
-              className="uppercase tracking-widest font-semibold hover:underline"
-            >
-              about
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={`#`}
-              className="uppercase tracking-widest font-semibold hover:underline"
-            >
-              process
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={`#`}
-              className="uppercase tracking-widest font-semibold hover:underline"
-            >
-              schedule a call
-            </Link>
-          </li>
+    <footer className="bg-yinmn-blue px-4 py-16 text-seasalt">
+      <div className="flex flex-col items-center gap-8 text-center">
+        <Logo />
+        <ul className="flex max-sm:flex-col items-center gap-4">
+          <Nav anchorTagClass="font-semibold tracking-widest uppercase hover:underline" />
         </ul>
-        <div className="text-center">
+        <div className="">
           <Link
             href={`#`}
             className="font-medium tracking-wide hover:underline"
@@ -55,10 +27,10 @@ export default function Footer() {
             Terms
           </Link>
         </div>
-        <p className="text-center">
-          <span className="text-sm tracking-tight">
+        <p>
+          <strong className="font-light text-sm tracking-tight">
             Patience Brown © {currentYear}
-          </span>
+          </strong>
         </p>
       </div>
     </footer>

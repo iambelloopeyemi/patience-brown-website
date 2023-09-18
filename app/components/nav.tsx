@@ -13,6 +13,7 @@ export default function Nav({
 }: NavProps): JSX.Element {
   const pathname: string = usePathname();
   const links: string[] = ["about", "process", "schedule-a-call"];
+
   return (
     <>
       {links.map((link: string) => {
