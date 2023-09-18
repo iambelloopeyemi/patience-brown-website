@@ -3,14 +3,14 @@ import professionalSpeaker from "../assets/preacher-icon.webp";
 import missionaries from "../assets/missionaries-icon.webp";
 import volunteer from "../assets/volunteer-icon.webp";
 
-interface BeneficiariesContentProps {
+export interface BeneficiaryProps {
   src: StaticImageData;
   alt: string;
   title: string;
   text: string;
 }
 
-export const BeneficiariesContent: BeneficiariesContentProps[] = [
+export const BeneficiaryContent: BeneficiaryProps[] = [
   {
     src: professionalSpeaker,
     alt: "preacher icon",

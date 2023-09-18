@@ -1,17 +1,17 @@
 import Hero from "./components/home/hero";
 import EmpowermentSection from "./components/home/EmpowermentSection";
 import ConsultationSection from "./components/home/ConsultationSection";
-import SectionOne from "./components/home/sectionOne";
+import BenefitSection from "./components/home/BenefitSection";
 import ProcessSection from "./components/home/ProcessSection";
-import SectionTwo from "./components/home/CollaborationSection";
+import CollaborationSection from "./components/home/CollaborationSection";
 import TestimonialSection from "./components/home/TestimonialSection";
 
 export default function Home(): JSX.Element {
   return (
     <>
       <Hero />
-      <SectionOne />
-      <SectionTwo />
+      <BenefitSection />
+      <CollaborationSection />
       <ProcessSection />
       <TestimonialSection />
       <ConsultationSection />
