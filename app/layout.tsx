@@ -1,6 +1,5 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Footer from "./components/footer";
 import Header from "./components/header";
 
@@ -9,8 +8,6 @@ export const metadata: Metadata = {
   description: "",
 };
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function RootLayout({
   children,
 }: {
@@ -18,7 +15,7 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} text-jet flex flex-col`}>
+      <body className="text-jet flex flex-col">
         <Header />
         <main className="grow min-h-screen">{children}</main>
         <Footer />
