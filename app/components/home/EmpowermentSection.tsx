@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { cormorant_garamond } from "@/app/utils/font";
 
-export default function SectionFive() {
+export default function EmpowermentSection() {
   return (
     <section className="bg-seasalt px-5 sm:px-10 lg:px-20 py-16 lg:py-20">
       <div className="flex justify-center items-center">
@@ -11,11 +11,11 @@ export default function SectionFive() {
               src="/books-icon.webp"
               alt="books icon"
               width={60}
-              height={59}
+              height={60}
             />
           </div>
           <div
-            className={`${cormorant_garamond.className} text-center font-medium`}
+            className={`${cormorant_garamond.className} font-medium text-center`}
           >
             <p className="text-yinmn-blue text-4xl mb-2">
               Let Nothing Deter You Any Longer
