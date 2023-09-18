@@ -1,5 +1,5 @@
 import Hero from "./components/home/hero";
-import SectionFive from "./components/home/sectionFive";
+import EmpowermentSection from "./components/home/EmpowermentSection";
 import SectionFour from "./components/home/sectionFour";
 import SectionOne from "./components/home/sectionOne";
 import SectionThree from "./components/home/sectionThree";
@@ -15,7 +15,7 @@ export default function Home(): JSX.Element {
       <SectionThree />
       <Testimonial />
       <SectionFour />
-      <SectionFive />
+      <EmpowermentSection />
     </>
   );
 }
