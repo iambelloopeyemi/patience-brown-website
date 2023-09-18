@@ -1,23 +1,25 @@
 import Image from "next/image";
 import { cormorant_garamond } from "../../utils/font";
-import profilePic from "../../assets/profile-picture-1.jpg";
+import profilePic from "../../assets/patience-brown-1.jpg";
 import Button from "../button";
 
-export default function Hero(): JSX.Element {
+export default function HeroSection(): JSX.Element {
   return (
-    <section className="grid lg:grid-cols-2 bg-yinmn-blue">
-      <div className="col-span-1 max-lg:order-2 flex justify-center items-center px-4 sm:px-8 lg:px-10 py-16 lg:py-24">
+    <section className="bg-yinmn-blue grid lg:grid-cols-2">
+      <div className="col-span-1 max-lg:order-2 px-5 sm:px-10 py-16 lg:py-24">
         <article
-          className={`${cormorant_garamond.className} text-white flex flex-col gap-10`}
+          className={`${cormorant_garamond.className} text-white flex flex-col justify-center gap-10`}
         >
-          <h1 className="text-4xl sm:text-5xl font-medium">
+          <h1 className="font-medium text-5xl max-lg:text-center">
             It&apos;s time you finally authored that book
           </h1>
-          <h2 className="text-2xl sm:text-3xl font-medium">
+          <h2 className="font-medium text-3xl max-lg:text-center">
             Work with Brown Patience to write your book, and get your message
             into the world
           </h2>
-          <Button url="schedule-a-call" title="schedule a call" />
+          <div className="flex max-lg:justify-center">
+            <Button url="schedule-a-call" title="schedule a call" />
+          </div>
         </article>
       </div>
       <div className="col-span-1 max-lg:order-1 relative">
