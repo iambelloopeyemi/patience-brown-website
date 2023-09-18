@@ -1,6 +1,6 @@
 import Hero from "./components/home/hero";
 import EmpowermentSection from "./components/home/EmpowermentSection";
-import SectionFour from "./components/home/sectionFour";
+import ConsultationSection from "./components/home/ConsultationSection";
 import SectionOne from "./components/home/sectionOne";
 import SectionThree from "./components/home/sectionThree";
 import SectionTwo from "./components/home/sectionTwo";
@@ -14,7 +14,7 @@ export default function Home(): JSX.Element {
       <SectionTwo />
       <SectionThree />
       <Testimonial />
-      <SectionFour />
+      <ConsultationSection />
       <EmpowermentSection />
     </>
   );
