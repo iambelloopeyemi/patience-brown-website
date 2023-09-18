@@ -31,7 +31,7 @@ export default function ConsultationSection() {
               Let me ensure you share that message!
             </p>
           </div>
-          <div className="flex justify-center">
+          <div className="flex max-lg:justify-center">
             <Button url="/schedule-a-call" title="sechedule a call" />
           </div>
         </div>
