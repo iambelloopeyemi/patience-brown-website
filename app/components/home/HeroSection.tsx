@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { cormorant_garamond } from "../../utils/font";
 import profilePic from "../../assets/patience-brown-1.jpg";
-import Button from "../button";
+import Button from "../ButtonComponent";
 
 export default function HeroSection(): JSX.Element {
   return (

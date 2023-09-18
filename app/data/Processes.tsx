@@ -11,7 +11,7 @@ interface ContentProps {
   children: ReactNode;
 }
 
-function ProcessContent({ children }: ContentProps): JSX.Element {
+const ProcessContent = ({ children }: ContentProps): JSX.Element => {
   return (
     <p
       className={`${cormorant_garamond.className} text-jet font-medium text-xl`}
@@ -19,7 +19,7 @@ function ProcessContent({ children }: ContentProps): JSX.Element {
       {children}
     </p>
   );
-}
+};
 
 export const processes: ProcessesProps[] = [
   {
@@ -48,7 +48,7 @@ export const processes: ProcessesProps[] = [
         <ProcessContent>
           A clarity session may have you noting, just like this dear client,
           “Thank you for the correction. Everybody has been telling me how
-          amazing it [the book] is. No one pointed out these to me. I listened
+          amazing it (the book) is. No one pointed out these to me. I listened
           to your voice note thrice, it makes sense to me now. I knew something
           was missing.”
         </ProcessContent>

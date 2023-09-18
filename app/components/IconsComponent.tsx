@@ -25,7 +25,7 @@ export function XMark(): JSX.Element {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 sm:w-8 h-8 sm:h-8"
+      className="w-6 sm:w-8 h-6 sm:h-8"
     >
       <path
         strokeLinecap="round"

@@ -1,4 +1,3 @@
-// BeneficiariesComponent.tsx
 import Image from "next/image";
 import { montserrat } from "../utils/font";
 import { BeneficiaryProps } from "../data/Beneficiaries";
@@ -7,7 +6,7 @@ interface BeneficiariesComponentProps {
   content: BeneficiaryProps[];
 }
 
-export default function BeneficiariesComponent({
+export default function Beneficiaries({
   content,
 }: BeneficiariesComponentProps): JSX.Element {
   return (

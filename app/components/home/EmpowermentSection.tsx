@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { cormorant_garamond } from "@/app/utils/font";
 
-export default function EmpowermentSection() {
+export default function EmpowermentSection(): JSX.Element {
   return (
     <section className="bg-seasalt px-5 sm:px-10 lg:px-20 py-16 lg:py-20">
       <div className="flex justify-center items-center">

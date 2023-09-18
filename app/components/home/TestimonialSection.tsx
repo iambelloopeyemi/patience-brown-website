@@ -13,13 +13,11 @@ export default function Testimonial(): JSX.Element {
 
   return (
     <section className="bg-yinmn-blue px-5 sm:px-10 lg:px-20 py-16 lg:py-20">
-      <div
-        className={`${cormorant_garamond.className} text-white font-medium text-2xl text-center flex flex-col items-center gap-4 mb-10`}
-      >
-        <blockquote className="italic">
+      <div className="text-white font-medium text-2xl text-center flex flex-col items-center gap-4 mb-10">
+        <blockquote className={`${cormorant_garamond.className} italic`}>
           {`"${testimonies[selectedTestimonyIndex].quote}"`}
         </blockquote>
-        <p className="italic">
+        <p className={`${cormorant_garamond.className} italic`}>
           ~
           <span className="text-ecru">
             {testimonies[selectedTestimonyIndex].author}

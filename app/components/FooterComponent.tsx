@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Nav from "./nav";
-import Logo from "./logo";
+import Nav from "./NavComponent";
+import Logo from "./LogoComponent";
 
 export default function Footer(): JSX.Element {
   const currentYear: number = new Date().getFullYear();
@@ -28,7 +28,7 @@ export default function Footer(): JSX.Element {
           </Link>
         </div>
         <p>
-          <strong className="font-light text-sm tracking-tight">
+          <strong className="font-light tracking-tight">
             Patience Brown © {currentYear}
           </strong>
         </p>

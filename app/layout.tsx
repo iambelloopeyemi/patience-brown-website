@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import Footer from "./components/footer";
-import Header from "./components/header";
+import Footer from "./components/FooterComponent";
+import Header from "./components/HeaderComponent";
 
 export const metadata: Metadata = {
   title: "Patience Brown",

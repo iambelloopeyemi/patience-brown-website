@@ -1,17 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { montserrat } from "../utils/font";
-import { Bars, XMark } from "./icons";
-import websiteLogo from "../assets/website-logo.png";
-import Nav from "./nav";
+import { Bars, XMark } from "./IconsComponent";
+import Logo from "./LogoComponent";
+import Nav from "./NavComponent";
 
 export default function Header(): JSX.Element {
   const [isOpen, setOpen] = useState<boolean>(false);
   const [headerStyle, setHeaderStyle] = useState<string>("");
-  const [logoStyle, setLogoStyle] = useState<string>("");
   const [navFontStyle, setNavFontStyle] = useState<string>("");
+  const [isScrolled, setScrolled] = useState<boolean>(false);
 
   const handleToggle = (): void => {
     setOpen((previousState: boolean) => !previousState);
@@ -25,19 +23,21 @@ export default function Header(): JSX.Element {
 
       const headerStyle =
         scrolled > heroSectionHeight
-          ? "bg-white px-4 sm:px-8 lg:px-16 z-50 lg:py-1 lg:fixed left-0 right-0 ease-in-out"
-          : "bg-white px-4 sm:px-8 lg:px-16 py-2 z-50";
-
-      const logoStyle =
-        scrolled > heroSectionHeight ? "w-40 h-auto" : "w-40 sm:w-60 h-auto";
+          ? "bg-white px-5 sm:px-10 lg:px-20 lg:py-1 z-50 lg:fixed left-0 right-0 ease-in-out"
+          : "bg-white px-5 sm:px-10 lg:px-20 z-50 ease-in-out";
 
       const navFontStyle =
         scrolled > heroSectionHeight
-          ? "uppercase font-semibold text-xs tracking-widest hover:text-yinmn-blue"
-          : "uppercase font-bold text-sm tracking-widest hover:text-yinmn-blue";
+          ? "uppercase font-semibold text-sm tracking-widest hover:text-yinmn-blue"
+          : "uppercase font-bold tracking-widest hover:text-yinmn-blue";
+
+      if (scrolled > heroSectionHeight) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
 
       setHeaderStyle(headerStyle);
-      setLogoStyle(logoStyle);
       setNavFontStyle(navFontStyle);
     };
 
@@ -50,15 +50,15 @@ export default function Header(): JSX.Element {
   return (
     <header
       id="header"
-      className={`${isOpen ? null : "border-b"}
-      ${montserrat.className}
-      ${headerStyle}`}
+      className={`
+      ${isOpen ? null : "border-b"} 
+      ${montserrat.className} 
+      ${headerStyle}
+      `}
     >
       <nav className="flex items-center justify-between">
-        <div className={`${logoStyle}`}>
-          <Link href={`/`}>
-            <Image src={websiteLogo} alt="website logo" />
-          </Link>
+        <div>
+          <Logo isScrolled={isScrolled} />
         </div>
         <ul className="hidden lg:flex items-center gap-8">
           <Nav
@@ -76,12 +76,12 @@ export default function Header(): JSX.Element {
       {isOpen && (
         <nav
           onClick={handleToggle}
-          className="absolute left-0 right-0 top-12 bg-white border-b py-5"
+          className="absolute left-0 right-0 top-16 bg-white border-b py-5"
         >
           <ul className="lg:hidden flex flex-col items-center gap-5">
             <Nav
-              activeAnchorTagClass="uppercase font-bold text-xs sm:text-sm tracking-widest text-yinmn-blue"
-              anchorTagClass="uppercase font-bold text-xs sm:text-sm tracking-widest"
+              activeAnchorTagClass="text-yinmn-blue font-bold text-sm tracking-widest uppercase"
+              anchorTagClass="font-bold text-sm tracking-widest uppercase"
             />
           </ul>
         </nav>

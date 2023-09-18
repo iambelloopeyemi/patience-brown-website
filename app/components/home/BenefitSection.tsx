@@ -1,6 +1,6 @@
 import { cormorant_garamond } from "@/app/utils/font";
-import BeneficiariesComponent from "../BeneficiariesComponent";
 import { BeneficiaryContent } from "@/app/data/Beneficiaries";
+import Beneficiaries from "../BeneficiariesComponent";
 
 export default function BenefitSection(): JSX.Element {
   return (
@@ -27,7 +27,7 @@ export default function BenefitSection(): JSX.Element {
             Who can benefit from a ghostwriter and book editor?
           </div>
           <ul className="grid lg:grid-cols-3 gap-3">
-            <BeneficiariesComponent content={BeneficiaryContent} />
+            <Beneficiaries content={BeneficiaryContent} />
           </ul>
         </article>
       </div>

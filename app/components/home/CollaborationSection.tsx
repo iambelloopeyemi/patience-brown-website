@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { cormorant_garamond, montserrat } from "@/app/utils/font";
-import Button from "../button";
+import Button from "../ButtonComponent";
 
 interface ListItemProps {
   text: string;

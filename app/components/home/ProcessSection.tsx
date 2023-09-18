@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { cormorant_garamond, montserrat } from "@/app/utils/font";
 import { processes } from "@/app/data/Processes";
-import Button from "../button";
+import Button from "../ButtonComponent";
 
 export default function ProcessSection(): JSX.Element {
   return (
