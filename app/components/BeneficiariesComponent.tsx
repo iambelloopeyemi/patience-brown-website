@@ -14,7 +14,7 @@ export default function Beneficiaries({
       {content.map(({ src, alt, title, text }, index: number) => (
         <li key={index} className="flex flex-col items-center">
           <div className="mb-3">
-            <Image src={src} alt={alt} />
+            <Image src={src} alt={alt} width={128} height={128} />
           </div>
           <div
             className={`${montserrat.className} text-yinmn-blue font-semibold text-lg uppercase mb-2`}
