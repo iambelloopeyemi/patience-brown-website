@@ -1,8 +1,9 @@
-import { Cormorant_Garamond, Montserrat, Laila } from "next/font/google";
+import { Cormorant, Montserrat, Laila } from "next/font/google";
 
-export const cormorant_garamond = Cormorant_Garamond({
+export const cormorant = Cormorant({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
+  fallback: ["Georgia", "Times New Roman", "serif"],
   display: "swap",
 });
 
