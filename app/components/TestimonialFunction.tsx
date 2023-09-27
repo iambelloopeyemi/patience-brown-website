@@ -12,11 +12,11 @@ export default function TestimonialFunction(): JSX.Element {
 
   return (
     <>
-      <article className="text-white font-medium text-[26px] leading-[31px] text-center flex flex-col items-center gap-4 mb-8">
-        <blockquote className="italic">
+      <article className="text-white font-medium italic text-[26px] leading-[31px] text-center flex flex-col items-center gap-4 mb-8">
+        <blockquote cite={testimonies[selectedTestimonyIndex].author}>
           {`"${testimonies[selectedTestimonyIndex].quote}"`}
         </blockquote>
-        <p className="italic">
+        <p>
           ~
           <span className="text-ecru">
             {testimonies[selectedTestimonyIndex].author}
@@ -24,7 +24,7 @@ export default function TestimonialFunction(): JSX.Element {
         </p>
       </article>
       <div className="flex justify-center items-center gap-3">
-        {testimonies.map((_, index: number) => (
+        {testimonies.map<JSX.Element>((_, index: number) => (
           <button
             key={index}
             onClick={() => handleButtonClick(index)}

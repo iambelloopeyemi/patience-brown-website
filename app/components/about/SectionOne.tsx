@@ -6,9 +6,9 @@ export default function SectionOne(): JSX.Element {
     <section className="px-5 sm:px-10 lg:px-20 py-16 lg:py-20">
       <div className="grid lg:grid-cols-2 gap-10">
         <article
-          className={`${cormorant.className} font-medium flex flex-col justify-center`}
+          className={`${cormorant.className} font-medium flex flex-col justify-center gap-5`}
         >
-          <h2 className="text-[48px] leading-[58px] tracking-wide mb-5">
+          <h2 className="text-[48px] leading-[58px] tracking-wide">
             Meet Patience
           </h2>
           <div className="text-[22px] leading-[23px] flex flex-col gap-4">
