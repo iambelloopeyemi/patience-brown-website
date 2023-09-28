@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { laila } from "../utils/font";
 
 interface LogoProps {
@@ -6,7 +7,7 @@ interface LogoProps {
 
 export default function Logo({ isScrolled }: LogoProps): JSX.Element {
   return (
-    <div className={`${laila.className}`}>
+    <Link href="/" className={`${laila.className}`}>
       {isScrolled ? (
         <strong className="block font-semibold text-3xl">Patience Brown</strong>
       ) : (
@@ -17,6 +18,6 @@ export default function Logo({ isScrolled }: LogoProps): JSX.Element {
           </strong>
         </>
       )}
-    </div>
+    </Link>
   );
 }

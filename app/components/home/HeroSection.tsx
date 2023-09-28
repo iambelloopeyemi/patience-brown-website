@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cormorant_garamond } from "../../utils/font";
+import { cormorant } from "../../utils/font";
 import profilePic from "../../assets/patience-brown-1.jpg";
 import Button from "../ButtonComponent";
 
@@ -8,7 +8,7 @@ export default function HeroSection(): JSX.Element {
     <section className="bg-yinmn-blue grid lg:grid-cols-2">
       <div className="col-span-1 max-lg:order-2 px-5 sm:px-10 py-16 lg:py-24">
         <article
-          className={`${cormorant_garamond.className} text-white flex flex-col justify-center gap-10`}
+          className={`${cormorant.className} text-white flex flex-col justify-center gap-10`}
         >
           <h1 className="font-medium text-5xl max-lg:text-center">
             It&apos;s time you finally authored that book

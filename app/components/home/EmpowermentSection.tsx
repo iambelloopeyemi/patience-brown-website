@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cormorant_garamond } from "@/app/utils/font";
+import { cormorant } from "@/app/utils/font";
 
 export default function EmpowermentSection(): JSX.Element {
   return (
@@ -14,9 +14,7 @@ export default function EmpowermentSection(): JSX.Element {
               height={60}
             />
           </div>
-          <div
-            className={`${cormorant_garamond.className} font-medium text-center`}
-          >
+          <div className={`${cormorant.className} font-medium text-center`}>
             <p className="text-yinmn-blue text-4xl mb-2">
               Let Nothing Deter You Any Longer
             </p>

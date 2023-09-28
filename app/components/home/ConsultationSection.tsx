@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cormorant_garamond, montserrat } from "@/app/utils/font";
+import { cormorant, montserrat } from "@/app/utils/font";
 import Button from "../ButtonComponent";
 
 export default function ConsultationSection(): JSX.Element {
@@ -8,7 +8,7 @@ export default function ConsultationSection(): JSX.Element {
       <div className="grid lg:grid-cols-2 gap-10">
         <div className="flex flex-col justify-center">
           <h5
-            className={`${cormorant_garamond.className} font-medium text-5xl max-lg:text-center mb-10`}
+            className={`${cormorant.className} font-medium text-5xl max-lg:text-center mb-10`}
           >
             Get Started Right Now
           </h5>
@@ -19,14 +19,14 @@ export default function ConsultationSection(): JSX.Element {
               let&apos;s talk
             </h5>
             <p
-              className={`${cormorant_garamond.className} font-medium text-2xl max-lg:text-center mb-2`}
+              className={`${cormorant.className} font-medium text-2xl max-lg:text-center mb-2`}
             >
               Tell me about the book you&apos;ve been desiring to write, the
               message you&apos;ve been yearning to share. Tell me where you are
               and I&apos;ll walk with you.
             </p>
             <p
-              className={`${cormorant_garamond.className} font-medium text-2xl max-lg:text-center`}
+              className={`${cormorant.className} font-medium text-2xl max-lg:text-center`}
             >
               Let me ensure you share that message!
             </p>

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { cormorant_garamond } from "@/app/utils/font";
+import { cormorant } from "@/app/utils/font";
 import { testimonies } from "@/app/data/Testimonies";
 
 export default function Testimonial(): JSX.Element {
@@ -14,10 +14,10 @@ export default function Testimonial(): JSX.Element {
   return (
     <section className="bg-yinmn-blue px-5 sm:px-10 lg:px-20 py-16 lg:py-20">
       <div className="text-white font-medium text-2xl text-center flex flex-col items-center gap-4 mb-10">
-        <blockquote className={`${cormorant_garamond.className} italic`}>
+        <blockquote className={`${cormorant.className} italic`}>
           {`"${testimonies[selectedTestimonyIndex].quote}"`}
         </blockquote>
-        <p className={`${cormorant_garamond.className} italic`}>
+        <p className={`${cormorant.className} italic`}>
           ~
           <span className="text-ecru">
             {testimonies[selectedTestimonyIndex].author}

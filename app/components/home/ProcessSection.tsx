@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cormorant_garamond, montserrat } from "@/app/utils/font";
+import { cormorant, montserrat } from "@/app/utils/font";
 import { processes } from "@/app/data/Processes";
 import Button from "../ButtonComponent";
 
@@ -14,7 +14,7 @@ export default function ProcessSection(): JSX.Element {
             the 3-step process to:
           </p>
           <h4
-            className={`${cormorant_garamond.className} text-black font-medium text-5xl`}
+            className={`${cormorant.className} text-black font-medium text-5xl`}
           >
             Get Your Book, Your Voice, Your message, Out There
           </h4>
