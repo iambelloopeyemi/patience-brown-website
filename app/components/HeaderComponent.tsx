@@ -51,16 +51,8 @@ export default function Header(): JSX.Element {
         </div>
         <ul className="hidden lg:flex items-center gap-8">
           <Nav
-            activeAnchorTagClass={`${
-              isScrolled
-                ? "uppercase font-semibold text-sm tracking-widest hover:text-yinmn-blue"
-                : "uppercase font-bold tracking-widest hover:text-yinmn-blue"
-            } text-yinmn-blue`}
-            anchorTagClass={`${
-              isScrolled
-                ? "uppercase font-semibold text-sm tracking-widest hover:text-yinmn-blue"
-                : "uppercase font-bold tracking-widest hover:text-yinmn-blue"
-            }`}
+            activeAnchorTagClass="text-yinmn-blue font-bold uppercase text-[14px] leading-[14px] tracking-widest hover:text-yinmn-blue"
+            anchorTagClass="font-bold uppercase text-[14px] leading-[14px] tracking-widest hover:text-yinmn-blue"
           />
         </ul>
         <button
@@ -73,12 +65,12 @@ export default function Header(): JSX.Element {
       {isOpen && (
         <nav
           onClick={handleToggle}
-          className="absolute left-0 right-0 top-16 bg-white border-b py-5"
+          className="bg-white border-b py-5 absolute left-0 right-0 top-14"
         >
           <ul className="lg:hidden flex flex-col items-center gap-5">
             <Nav
-              activeAnchorTagClass="text-yinmn-blue font-bold text-sm tracking-widest uppercase"
-              anchorTagClass="font-bold text-sm tracking-widest uppercase"
+              activeAnchorTagClass="text-yinmn-blue font-bold uppercase text-[14px] leading-[14px] tracking-widest hover:text-yinmn-blue"
+              anchorTagClass="font-bold uppercase text-[14px] leading-[14px] tracking-widest hover:text-yinmn-blue"
             />
           </ul>
         </nav>
