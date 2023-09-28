@@ -13,6 +13,7 @@ const config: Config = {
         ecru: "#D4B888",
         seasalt: "#F9F9F9",
         jet: "#353639",
+        platinum: "#DDDDDD",
         "yinmn-blue": "#294D78",
       },
     },
