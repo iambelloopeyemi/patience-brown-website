@@ -10,7 +10,10 @@ export default function Footer(): JSX.Element {
       <div className="flex flex-col items-center gap-8 text-center">
         <Logo />
         <ul className="flex max-sm:flex-col items-center gap-4">
-          <Nav anchorTagClass="font-semibold tracking-widest uppercase hover:underline" />
+          <Nav
+            activeAnchorTagClass="font-semibold tracking-widest uppercase hover:underline"
+            anchorTagClass="font-semibold tracking-widest uppercase hover:underline"
+          />
         </ul>
         <div>
           <Link
