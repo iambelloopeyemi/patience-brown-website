@@ -1,7 +1,6 @@
 export function Bars(): JSX.Element {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
@@ -20,7 +19,6 @@ export function Bars(): JSX.Element {
 export function XMark(): JSX.Element {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
