@@ -7,8 +7,6 @@ import Nav from "./NavComponent";
 
 export default function Header(): JSX.Element {
   const [isOpen, setOpen] = useState<boolean>(false);
-  const [headerStyle, setHeaderStyle] = useState<string>("");
-  const [navFontStyle, setNavFontStyle] = useState<string>("");
   const [isScrolled, setScrolled] = useState<boolean>(false);
 
   const handleToggle = (): void => {
@@ -21,24 +19,11 @@ export default function Header(): JSX.Element {
         document.getElementById("header")!.offsetHeight;
       const scrolled: number = window.scrollY;
 
-      const headerStyle =
-        scrolled > heroSectionHeight
-          ? "bg-white px-5 sm:px-10 lg:px-20 lg:py-1 z-50 lg:fixed left-0 right-0 ease-in-out"
-          : "bg-white px-5 sm:px-10 lg:px-20 z-50 ease-in-out";
-
-      const navFontStyle =
-        scrolled > heroSectionHeight
-          ? "uppercase font-semibold text-sm tracking-widest hover:text-yinmn-blue"
-          : "uppercase font-bold tracking-widest hover:text-yinmn-blue";
-
       if (scrolled > heroSectionHeight) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
-
-      setHeaderStyle(headerStyle);
-      setNavFontStyle(navFontStyle);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -53,7 +38,11 @@ export default function Header(): JSX.Element {
       className={`
       ${isOpen ? null : "border-b"} 
       ${montserrat.className} 
-      ${headerStyle}
+      ${
+        isScrolled
+          ? "bg-white px-5 sm:px-10 lg:px-20 lg:py-1 z-50 lg:fixed left-0 right-0 transition-all duration-300 ease-in"
+          : "bg-white px-5 sm:px-10 lg:px-20 z-50 transition-all duration-300 ease-in"
+      }
       `}
     >
       <nav className="flex items-center justify-between">
@@ -62,8 +51,16 @@ export default function Header(): JSX.Element {
         </div>
         <ul className="hidden lg:flex items-center gap-8">
           <Nav
-            activeAnchorTagClass={`${navFontStyle} text-yinmn-blue`}
-            anchorTagClass={`${navFontStyle}`}
+            activeAnchorTagClass={`${
+              isScrolled
+                ? "uppercase font-semibold text-sm tracking-widest hover:text-yinmn-blue"
+                : "uppercase font-bold tracking-widest hover:text-yinmn-blue"
+            } text-yinmn-blue`}
+            anchorTagClass={`${
+              isScrolled
+                ? "uppercase font-semibold text-sm tracking-widest hover:text-yinmn-blue"
+                : "uppercase font-bold tracking-widest hover:text-yinmn-blue"
+            }`}
           />
         </ul>
         <button
