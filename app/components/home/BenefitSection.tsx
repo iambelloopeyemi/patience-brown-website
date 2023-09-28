@@ -1,11 +1,11 @@
-import { cormorant_garamond } from "@/app/utils/font";
+import { cormorant } from "@/app/utils/font";
 import { BeneficiaryContent } from "@/app/data/Beneficiaries";
 import Beneficiaries from "../BeneficiariesComponent";
 
 export default function BenefitSection(): JSX.Element {
   return (
     <section className="bg-seasalt px-5 sm:px-10 lg:px-20 py-16 lg:py-20">
-      <div className={`${cormorant_garamond.className}`}>
+      <div className={`${cormorant.className}`}>
         <article className="flex flex-col items-center font-medium text-center">
           <h3 className="text-black text-5xl mb-3">
             Get your message to the people in need of it

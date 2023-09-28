@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { cormorant_garamond } from "@/app/utils/font";
+import { cormorant } from "@/app/utils/font";
 
 interface ProcessesProps {
   icon: string;
@@ -13,9 +13,7 @@ interface ContentProps {
 
 const ProcessContent = ({ children }: ContentProps): JSX.Element => {
   return (
-    <p
-      className={`${cormorant_garamond.className} text-jet font-medium text-xl`}
-    >
+    <p className={`${cormorant.className} text-jet font-medium text-xl`}>
       {children}
     </p>
   );

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cormorant_garamond, montserrat } from "@/app/utils/font";
+import { cormorant, montserrat } from "@/app/utils/font";
 import Button from "../ButtonComponent";
 
 interface ListItemProps {
@@ -8,7 +8,7 @@ interface ListItemProps {
 
 const ListItem = ({ text }: ListItemProps): JSX.Element => (
   <li
-    className={`${cormorant_garamond.className} font-medium text-xl max-lg:text-center mb-1`}
+    className={`${cormorant.className} font-medium text-xl max-lg:text-center mb-1`}
   >
     {text}
   </li>
@@ -28,9 +28,7 @@ export default function SectionTwo(): JSX.Element {
         </div>
         <div className="flex flex-col justify-center">
           <header className="max-lg:text-center mb-10">
-            <h4
-              className={`${cormorant_garamond.className} font-medium text-5xl`}
-            >
+            <h4 className={`${cormorant.className} font-medium text-5xl`}>
               Let me ensure you share that message
             </h4>
           </header>
