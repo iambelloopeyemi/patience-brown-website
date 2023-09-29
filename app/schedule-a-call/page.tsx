@@ -1,14 +1,14 @@
-import HeroComponent from "../components/HeroComponent";
-import CallToActionSection from "../components/schedule-a-call/CallToActionSection";
+import Hero from "../components/Hero";
+import Container from "../components/schedule-a-call/Container";
 
 export default function scheduleACallPage() {
   return (
     <>
-      <HeroComponent
-        heading={`Finally Finish Your Book`}
-        message={`Fill out the form below to start the conversation. You can expect a response within 1-2 business days.`}
+      <Hero
+        heading="Finally Finish Your Book"
+        message="Fill out the form below to start the conversation. You can expect a response within 1-2 business days."
       />
-      <CallToActionSection />
+      <Container />
     </>
   );
 }

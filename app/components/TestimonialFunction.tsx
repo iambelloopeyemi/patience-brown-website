@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { testimonies } from "@/app/data/Testimonies";
+import { TestimonialData as testimonies } from "@/app/data/ComponentData";
 
 export default function TestimonialFunction(): JSX.Element {
   const [selectedTestimonyIndex, setSelectedTestimonyIndex] =

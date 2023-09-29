@@ -1,9 +1,9 @@
-import { infoCardContent } from "@/app/data/ProcessComponentData";
-import InfoCardComponent from "../InfoCardComponent";
-import Button from "../ButtonComponent";
 import { cormorant, montserrat } from "@/app/utils/font";
+import { infoCardContent } from "@/app/data/ProcessPageData";
+import InfoCard from "../InfoCard";
+import Button from "../Button";
 
-export default function CallToActionComponent(): JSX.Element {
+export default function CallToAction(): JSX.Element {
   return (
     <section className="px-5 sm:px-10 lg:px-20 py-16 lg:py-20">
       <div className="flex flex-col items-center">
@@ -20,18 +20,11 @@ export default function CallToActionComponent(): JSX.Element {
           </h3>
         </div>
         <ul className="grid lg:grid-cols-3 gap-5 mb-16">
-          {infoCardContent.map(
-            ({ src, alt, heading, message }, index: number) => (
-              <li key={index} className="flex flex-col items-center">
-                <InfoCardComponent
-                  src={src}
-                  alt={alt}
-                  heading={heading}
-                  message={message}
-                />
-              </li>
-            )
-          )}
+          {infoCardContent.map(({ ...props }, index: number) => (
+            <li key={index} className="flex flex-col items-center">
+              <InfoCard {...props} />
+            </li>
+          ))}
         </ul>
         <p
           className={`${cormorant.className} font-medium text-[28px] leading-[31px] tracking-wide text-center mb-12`}

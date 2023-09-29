@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import Footer from "./components/FooterComponent";
-import Header from "./components/HeaderComponent";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Patience Brown",
@@ -14,10 +14,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }): JSX.Element {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body className="text-jet flex flex-col">
         <Header />
-        <main className="grow min-h-screen">{children}</main>
+        <main className="grow">{children}</main>
         <Footer />
       </body>
     </html>
