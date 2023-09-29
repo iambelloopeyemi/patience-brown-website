@@ -1,5 +1,5 @@
 import { cormorant } from "@/app/utils/font";
-import { BeneficiaryContent } from "@/app/data/Beneficiaries";
+import { BeneficiaryContent } from "@/app/data/BeneficiariesComponentData";
 import BeneficiariesCardComponent from "../BeneficiariesCardComponent";
 
 export default function BenefitSection(): JSX.Element {

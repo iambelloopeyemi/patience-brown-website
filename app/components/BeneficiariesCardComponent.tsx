@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { montserrat } from "../utils/font";
-import { BeneficiaryContentProps } from "../data/Beneficiaries";
+import { BeneficiaryContentProps } from "../data/BeneficiariesComponentData";
 
 export default function BeneficiariesCardComponent({
   src,
