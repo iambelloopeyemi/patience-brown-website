@@ -16,7 +16,7 @@ export default function Button({
     <Link href={`${url}`} target={isExternalLink ? "_blank" : "_self"}>
       <button className="bg-ecru px-8 py-3 rounded-full hover:scale-105 ease-in-out">
         <span
-          className={`${montserrat.className} text-white font-bold text-[16px] leading-[27px] tracking-widest uppercase`}
+          className={`${montserrat.className} text-white font-bold uppercase text-[16px] leading-[27px] tracking-widest`}
         >
           {title}
         </span>
