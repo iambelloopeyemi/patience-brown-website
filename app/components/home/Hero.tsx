@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { cormorant } from "../../utils/font";
-import Button from "../ButtonComponent";
+import Button from "../Button";
 
-export default function HeroSection(): JSX.Element {
+export default function Hero(): JSX.Element {
   return (
     <section className="bg-yinmn-blue grid lg:grid-cols-2">
       <article

@@ -1,14 +1,11 @@
 import { cormorant } from "@/app/utils/font";
 
-interface HeroComponentProps {
+interface HeroProps {
   heading: string;
   message: string;
 }
 
-export default function HeroComponent({
-  heading,
-  message,
-}: HeroComponentProps): JSX.Element {
+export default function Hero({ heading, message }: HeroProps): JSX.Element {
   return (
     <section className="bg-yinmn-blue px-16 sm:px-32 lg:px-64 py-16 lg:py-20 flex justify-center items-center">
       <article

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { cormorant, montserrat } from "@/app/utils/font";
-import Button from "../ButtonComponent";
+import Button from "../Button";
 
-export default function ConsultationSection(): JSX.Element {
+export default function Consultation(): JSX.Element {
   return (
     <section className="px-5 sm:px-10 lg:px-20 py-16 lg:py-20">
       <div className="grid lg:grid-cols-2 gap-10">

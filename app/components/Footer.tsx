@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { montserrat } from "../utils/font";
-import Logo from "./LogoComponent";
-import Nav from "./NavComponent";
+import Logo from "./Logo";
+import Nav from "./Nav";
 
 export default function Footer(): JSX.Element {
   const currentYear: number = new Date().getFullYear();

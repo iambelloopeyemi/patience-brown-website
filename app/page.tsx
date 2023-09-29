@@ -1,21 +1,28 @@
-import HeroSection from "./components/home/HeroSection";
-import BenefitSection from "./components/home/BenefitSection";
-import CollaborationSection from "./components/home/CollaborationSection";
-import ProcessSection from "./components/home/ProcessSection";
-import TestimonialSection from "./components/home/TestimonialSection";
-import ConsultationSection from "./components/home/ConsultationSection";
-import EmpowermentSection from "./components/home/EmpowermentSection";
+import Hero from "./components/home/Hero";
+import MessageToAudience from "./components/home/MessageToAudience";
+import Divider from "./components/home/Divider";
+import Beneficiaries from "./components/home/Beneficiaries";
+import Collaboration from "./components/home/Collaboration";
+import Process from "./components/home/Process";
+import Testimonial from "./components/Testimonial";
+import Consultation from "./components/home/Consultation";
+import Empowerment from "./components/Empowerment";
 
 export default function Home(): JSX.Element {
   return (
     <>
-      <HeroSection />
-      <BenefitSection />
-      <CollaborationSection />
-      <ProcessSection />
-      <TestimonialSection />
-      <ConsultationSection />
-      <EmpowermentSection />
+      <Hero />
+      <MessageToAudience />
+      <Divider />
+      <Beneficiaries />
+      <Collaboration />
+      <Process />
+      <Testimonial />
+      <Consultation />
+      <Empowerment
+        heading="Let Nothing Deter You Any Longer"
+        message="Share the message you know you should. You'll be saving lives"
+      />
     </>
   );
 }

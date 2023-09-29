@@ -1,24 +1,24 @@
 import Image from "next/image";
 import { cormorant, montserrat } from "../utils/font";
+import { InfoCardProps } from "../utils/interface";
 
-interface InfoCardComponentProps {
-  src: string;
-  alt: string;
-  heading: string;
-  message: string;
-}
-
-export default function InfoCardComponent({
+export default function InfoCard({
   src,
   alt,
+  width,
+  height,
   heading,
   message,
-}: InfoCardComponentProps) {
+}: InfoCardProps) {
   return (
     <>
-      <div className="mb-6">
-        <Image src={src} alt={alt} width={63} height={63} />
-      </div>
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className="mb-6"
+      />
       <p
         className={`${montserrat.className} text-yinmn-blue font-semibold text-[18px] leading-[25px] tracking-widest text-center mb-3`}
       >

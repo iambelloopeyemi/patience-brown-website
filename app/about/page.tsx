@@ -1,20 +1,20 @@
-import HeroComponent from "../components/HeroComponent";
-import SectionOne from "../components/about/SectionOne";
-import TestimonialComponent from "../components/TestimonialComponent";
-import SectionTwo from "../components/about/SectionTwo";
-import EmpowermentComponent from "../components/EmpowermentComponent";
+import Hero from "../components/Hero";
+import MeetPatience from "../components/about/MeetPatience";
+import Testimonial from "../components/Testimonial";
+import PreviousWork from "../components/about/PreviousWork";
+import Empowerment from "../components/Empowerment";
 
 export default function AboutPage(): JSX.Element {
   return (
     <>
-      <HeroComponent
+      <Hero
         heading="Patience Brown"
         message="A writer with a passion for helping others."
       />
-      <SectionOne />
-      <TestimonialComponent />
-      <SectionTwo />
-      <EmpowermentComponent
+      <MeetPatience />
+      <Testimonial />
+      <PreviousWork />
+      <Empowerment
         heading="Let's Write Your Book."
         message="Share your message with the people that need it the most."
       />

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { cormorant, montserrat } from "@/app/utils/font";
 
-export default function SectionTwo(): JSX.Element {
+export default function PreviousWork(): JSX.Element {
   return (
     <section className="px-5 sm:px-10 lg:px-20 py-16 lg:py-20">
       <div className="grid lg:grid-cols-2 gap-10">

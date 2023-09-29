@@ -6,7 +6,7 @@ interface EmpowermentComponentProps {
   message: string;
 }
 
-export default function EmpowermentComponent({
+export default function Empowerment({
   heading,
   message,
 }: EmpowermentComponentProps): JSX.Element {

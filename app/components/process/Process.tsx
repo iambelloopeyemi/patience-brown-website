@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { cormorant, montserrat } from "@/app/utils/font";
 
-interface ProcessComponentProps {
+interface ProcessProps {
   backgroundColor?: string;
   src: string;
   alt: string;
@@ -11,7 +11,7 @@ interface ProcessComponentProps {
   process: string[];
 }
 
-export default function ProcessComponent({
+export default function Process({
   backgroundColor,
   src,
   alt,
@@ -19,7 +19,7 @@ export default function ProcessComponent({
   heading,
   message,
   process,
-}: ProcessComponentProps): JSX.Element {
+}: ProcessProps): JSX.Element {
   return (
     <section
       className={`${backgroundColor} px-5 sm:px-10 lg:px-20 py-16 lg:py-20`}
@@ -37,7 +37,7 @@ export default function ProcessComponent({
           <div className={`${cormorant.className} font-medium`}>
             <h2 className="text-[48px] leading-[58px] mb-10">{heading}</h2>
             <p className="text-[22px] leading-[23px] mb-8">{message}</p>
-            <ul className="list-disc text-[22px] leading-[29px]">
+            <ul className="list-disc list-inside text-[22px] leading-[29px]">
               {process.map((item: string, index: number) => (
                 <li key={index}>{item}</li>
               ))}

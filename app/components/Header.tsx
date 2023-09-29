@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import { montserrat } from "../utils/font";
-import { Bars, XMark } from "./IconsComponent";
-import Logo from "./LogoComponent";
-import Nav from "./NavComponent";
+import { Bars, XMark } from "./Icons";
+import Logo from "./Logo";
+import Nav from "./Nav";
 
 export default function Header(): JSX.Element {
   const [isOpen, setOpen] = useState<boolean>(false);
