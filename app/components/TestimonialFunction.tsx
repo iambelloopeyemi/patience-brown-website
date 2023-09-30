@@ -12,8 +12,11 @@ export default function TestimonialFunction(): JSX.Element {
 
   return (
     <>
-      <article className="text-white font-medium italic text-[26px] leading-[31px] text-center flex flex-col items-center gap-4 mb-8">
-        <blockquote cite={testimonies[selectedTestimonyIndex].author}>
+      <article className="text-white font-medium italic text-[26px] leading-[31px] text-center mb-8">
+        <blockquote
+          cite={testimonies[selectedTestimonyIndex].author}
+          className="mb-4"
+        >
           {`"${testimonies[selectedTestimonyIndex].quote}"`}
         </blockquote>
         <p>

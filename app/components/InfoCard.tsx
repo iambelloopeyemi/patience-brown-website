@@ -20,13 +20,13 @@ export default function InfoCard({
         className="mb-6"
       />
       <p
-        className={`${montserrat.className} text-yinmn-blue font-semibold text-[18px] leading-[25px] tracking-widest text-center mb-3`}
+        className={`${montserrat.className} text-yinmn-blue font-semibold text-[18px] leading-[25px] tracking-widest mb-3`}
       >
         {heading}
       </p>
 
       <p
-        className={`${cormorant.className} font-medium text-[22px] leading-[23px] tracking-wide text-center`}
+        className={`${cormorant.className} font-medium text-[22px] leading-[23px] tracking-wide`}
       >
         {message}
       </p>

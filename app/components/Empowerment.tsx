@@ -24,7 +24,7 @@ export default function Empowerment({
         <article
           className={`${cormorant.className} font-medium text-center flex flex-col items-center gap-2`}
         >
-          <p className="text-yinmn-blue text-[44px] leading-[57px]">
+          <p className="text-yinmn-blue text-[32px] leading-[42px]">
             {heading}
           </p>
           <p className="text-[22px] leading-[26px]">{message}</p>

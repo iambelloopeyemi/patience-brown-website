@@ -33,7 +33,10 @@ export default function CallToActionForm(): JSX.Element {
         </ul>
         <div className="mb-[20px]">
           <div className="mb-4">
-            <label htmlFor="name" className="block mb-1">
+            <label
+              htmlFor="name"
+              className="block font-bold text-[16px] leading-[21px] after:content-['*'] after:ml-0.5 after:text-red-500 mb-1"
+            >
               Name
             </label>
             <div className="flex items-center gap-5">
@@ -59,7 +62,10 @@ export default function CallToActionForm(): JSX.Element {
             </div>
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block mb-1">
+            <label
+              htmlFor="email"
+              className="block font-bold text-[16px] leading-[21px] after:content-['*'] after:ml-0.5 after:text-red-500 mb-1"
+            >
               Email
             </label>
             <div className="border w-[340px] h-[38px] px-[10px] py-[6px] flex justify-center items-center">
@@ -71,7 +77,10 @@ export default function CallToActionForm(): JSX.Element {
             </div>
           </div>
           <div>
-            <label htmlFor="messageOrComment" className="block mb-1">
+            <label
+              htmlFor="messageOrComment"
+              className="block font-bold text-[16px] leading-[21px] after:content-['*'] after:ml-0.5 after:text-red-500 mb-1"
+            >
               Comment or Message
             </label>
             <div className="border w-[567px] h-[120px] px-[10px] py-[6px] flex justify-center items-center">

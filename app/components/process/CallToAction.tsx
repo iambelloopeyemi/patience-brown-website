@@ -6,15 +6,15 @@ import Button from "../Button";
 export default function CallToAction(): JSX.Element {
   return (
     <section className="px-5 sm:px-10 lg:px-20 py-16 lg:py-20">
-      <div className="flex flex-col items-center">
+      <div className="text-center">
         <div className="mb-10">
           <p
-            className={`${montserrat.className} text-yinmn-blue font-semibold text-[18px] leading-[25px] tracking-widest text-center mb-2`}
+            className={`${montserrat.className} text-yinmn-blue font-semibold text-[18px] leading-[25px] tracking-widest mb-2`}
           >
             READY TO GO?
           </p>
           <h3
-            className={`${cormorant.className} font-medium text-[48px] leading-[58px] tracking-wider text-center`}
+            className={`${cormorant.className} font-medium text-[48px] leading-[58px] tracking-wider`}
           >
             Getting Started Is Simple
           </h3>
