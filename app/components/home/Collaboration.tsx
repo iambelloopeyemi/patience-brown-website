@@ -17,20 +17,20 @@ export default function Collaboration(): JSX.Element {
         </div>
         <div className="flex flex-col justify-center">
           <h4
-            className={`${cormorant.className} font-medium text-5xl max-lg:text-center mb-10`}
+            className={`${cormorant.className} font-medium text-[48px] leading-[58px] max-lg:text-center mb-10`}
           >
             Let me ensure you share that message
           </h4>
           <ul className="list-disc list-inside mb-12">
             <span
-              className={`block ${montserrat.className} text-yinmn-blue font-semibold text-lg max-lg:text-center uppercase mb-2`}
+              className={`block ${montserrat.className} text-yinmn-blue font-semibold uppercase text-[18px] leading-[25px] max-lg:text-center  mb-2`}
             >
               together, we will:
             </span>
             {props.map((prop, index: number) => (
               <li
                 key={index}
-                className={`${cormorant.className} font-medium text-xl max-lg:text-center mb-1`}
+                className={`${cormorant.className} font-medium text-[22px] leading-[29px] max-lg:text-center mb-1`}
               >
                 {prop}
               </li>

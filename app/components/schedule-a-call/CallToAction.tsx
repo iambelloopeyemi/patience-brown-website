@@ -9,8 +9,8 @@ export default function CallToAction(): JSX.Element {
           Schedule a Call
         </h2>
         <p className="font-medium text-[22px] leading-[23px]">
-          {`We'll use this free, 20-minute Zoom call to discuss your book and
-          see whether a ghostwriter or book coach is right for you.`}
+          We&apos;ll use this free, 20-minute Zoom call to discuss your book and
+          see whether a ghostwriter or book coach is right for you.
         </p>
       </header>
       <CallToActionForm />
