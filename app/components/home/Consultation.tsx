@@ -8,8 +8,8 @@ export default function Consultation(): JSX.Element {
       className={`px-5 sm:px-10 lg:px-20 py-16 lg:py-20 ${cormorant.className}`}
     >
       <div className="grid lg:grid-cols-2 gap-10">
-        <div className="flex flex-col justify-center max-lg:text-center">
-          <h5 className="font-medium text-[48px] leading-[58px] mb-10">
+        <article className="flex flex-col justify-center">
+          <h5 className="font-medium text-[28px] lg:text-[48px] leading-[34px] lg:leading-[58px] mb-10">
             Get Started Right Now
           </h5>
           <div className="mb-12">
@@ -27,16 +27,17 @@ export default function Consultation(): JSX.Element {
               Let me ensure you share that message!
             </p>
           </div>
-          <div className="flex max-lg:justify-center">
+          <div>
             <Button url="/schedule-a-call" title="sechedule a call" />
           </div>
-        </div>
+        </article>
         <div className="flex justify-center items-center">
           <Image
             src="/patience-brown-3.jpg"
             alt="picture of patience brown"
             width={500}
             height={500}
+            style={{ width: "auto", height: "auto" }}
           />
         </div>
       </div>

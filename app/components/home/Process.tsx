@@ -13,12 +13,12 @@ export default function Process(): JSX.Element {
           the 3-step process to:
         </p>
         <h4
-          className={`${cormorant.className} text-black font-medium text-[48px] leading-[58px]`}
+          className={`${cormorant.className} text-black font-medium text-[28px] lg:text-[48px] leading-[34px] lg:leading-[58px]`}
         >
           Get Your Book, Your Voice, Your message, Out There
         </h4>
       </div>
-      <ul className="grid lg:grid-cols-3 gap-[72px] mb-12">
+      <ul className="grid lg:grid-cols-3 gap-[52px] lg:gap-[72px] mb-12">
         {props.map(({ ...props }, index: number) => (
           <li key={index} className="flex flex-col items-center">
             <InfoCard {...props} />

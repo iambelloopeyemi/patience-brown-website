@@ -10,7 +10,7 @@ export default function Beneficiaries(): JSX.Element {
       <h3 className="text-[34px] leading-[34px] mb-[33px]">
         Who can benefit from a ghostwriter and book editor?
       </h3>
-      <ul className="grid lg:grid-cols-3 gap-[72px]">
+      <ul className="grid lg:grid-cols-3 gap-[52px] lg:gap-[72px]">
         {props.map(({ ...props }, index: number) => (
           <li key={index} className="flex flex-col items-center">
             <InfoCard {...props} />
