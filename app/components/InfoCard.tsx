@@ -9,16 +9,19 @@ export default function InfoCard({
   height,
   heading,
   message,
-}: InfoCardProps) {
+}: InfoCardProps): JSX.Element {
   return (
     <>
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        className="mb-6"
-      />
+      <div className="flex items-center justify-center">
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          className="mb-6"
+          style={{ width: "auto", height: "auto" }}
+        />
+      </div>
       <p
         className={`${montserrat.className} text-yinmn-blue font-semibold text-[18px] leading-[25px] tracking-widest mb-3`}
       >
@@ -26,7 +29,7 @@ export default function InfoCard({
       </p>
 
       <p
-        className={`${cormorant.className} font-medium text-[22px] leading-[23px] tracking-wide`}
+        className={`${cormorant.className} font-medium text-[20px] lg:text-[22px] leading-[28px] lg:leading-[23px] tracking-wide`}
       >
         {message}
       </p>
