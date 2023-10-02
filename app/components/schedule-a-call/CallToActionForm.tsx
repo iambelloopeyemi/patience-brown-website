@@ -6,11 +6,12 @@ export default function CallToActionForm(): JSX.Element {
     "Pricing",
     "Other (describe below)",
   ];
+
   return (
-    <div>
+    <>
       <form action="">
         <ul className="mb-5">
-          <span className="block font-bold text-[16px] leading-[21px] mb-1">
+          <span className="block font-bold text-[16px] leading-[21px] mb-2">
             I&apos;d like more information about:
           </span>
           {services.map((service, index: number) => (
@@ -39,7 +40,7 @@ export default function CallToActionForm(): JSX.Element {
             >
               Name
             </label>
-            <div className="flex items-center gap-5">
+            <div className="flex max-sm:flex-col sm:items-center gap-5">
               <div>
                 <div className="border w-[160px] h-[38px] px-[10px] py-[6px] flex justify-center items-center mb-[2px]">
                   <input
@@ -68,7 +69,7 @@ export default function CallToActionForm(): JSX.Element {
             >
               Email
             </label>
-            <div className="border w-[340px] h-[38px] px-[10px] py-[6px] flex justify-center items-center">
+            <div className="border w-[240px] sm:w-[340px] h-[38px] px-[10px] py-[6px] flex justify-center items-center">
               <input
                 type="email"
                 id="name"
@@ -83,7 +84,7 @@ export default function CallToActionForm(): JSX.Element {
             >
               Comment or Message
             </label>
-            <div className="border w-[567px] h-[120px] px-[10px] py-[6px] flex justify-center items-center">
+            <div className="border w-[240px] sm:w-[340px] h-[120px] px-[10px] py-[6px] flex justify-center items-center">
               <textarea
                 name="messageOrComment"
                 id="messageOrComment"
@@ -95,12 +96,12 @@ export default function CallToActionForm(): JSX.Element {
         <div>
           <button
             type="submit"
-            className="bg-platinum px-[15px] py-[10px] hover:scale-105 ease-in-out"
+            className="bg-platinum px-[12px] sm:px-[15px] py-[8px] lg:py-[10px] hover:scale-105 ease-in-out"
           >
-            <span className="text-jet text-[22px]">Submit</span>
+            <span className="text-jet text-[20px] sm:text-[22px]">Submit</span>
           </button>
         </div>
       </form>
-    </div>
+    </>
   );
 }

@@ -7,8 +7,8 @@ export default function Consultation(): JSX.Element {
     <section
       className={`px-5 sm:px-10 lg:px-20 py-16 lg:py-20 ${cormorant.className}`}
     >
-      <div className="grid lg:grid-cols-2 gap-10">
-        <article className="flex flex-col justify-center">
+      <div className="grid sm:grid-cols-2 gap-10 sm:gap-8">
+        <div className="flex flex-col justify-center">
           <h5 className="font-medium text-[28px] lg:text-[48px] leading-[34px] lg:leading-[58px] mb-10">
             Get Started Right Now
           </h5>
@@ -30,7 +30,7 @@ export default function Consultation(): JSX.Element {
           <div>
             <Button url="/schedule-a-call" title="sechedule a call" />
           </div>
-        </article>
+        </div>
         <div className="flex justify-center items-center">
           <Image
             src="/patience-brown-3.jpg"

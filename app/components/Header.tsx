@@ -51,7 +51,7 @@ export default function Header(): JSX.Element {
         <div>
           <Logo isScrolled={isScrolled} />
         </div>
-        <ul className="hidden lg:flex items-center gap-8">
+        <ul className="hidden sm:flex items-center gap-8">
           <Nav
             activeAnchorTagClass="text-yinmn-blue font-bold uppercase text-[14px] leading-[14px] tracking-widest hover:text-yinmn-blue"
             anchorTagClass="font-bold uppercase text-[14px] leading-[14px] tracking-widest hover:text-yinmn-blue"
@@ -59,7 +59,7 @@ export default function Header(): JSX.Element {
         </ul>
         <button
           onClick={handleToggle}
-          className="lg:hidden bg-transparent border-none outline-none"
+          className="sm:hidden bg-transparent border-none outline-none"
         >
           {isOpen ? <XMark /> : <Bars />}
         </button>
@@ -69,7 +69,7 @@ export default function Header(): JSX.Element {
           onClick={handleToggle}
           className="bg-white border-b py-5 absolute left-0 right-0 top-16"
         >
-          <ul className="lg:hidden flex flex-col items-center gap-5">
+          <ul className="sm:hidden flex flex-col items-center gap-5">
             <Nav
               activeAnchorTagClass="text-yinmn-blue font-bold uppercase text-[14px] leading-[14px] tracking-widest hover:text-yinmn-blue"
               anchorTagClass="font-bold uppercase text-[14px] leading-[14px] tracking-widest hover:text-yinmn-blue"

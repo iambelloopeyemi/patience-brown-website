@@ -12,14 +12,16 @@ export default function InfoCard({
 }: InfoCardProps): JSX.Element {
   return (
     <>
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        className="mb-6"
-        style={{ width: "auto", height: "auto" }}
-      />
+      <div className="flex items-center justify-center">
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          className="mb-6"
+          style={{ width: "auto", height: "auto" }}
+        />
+      </div>
       <p
         className={`${montserrat.className} text-yinmn-blue font-semibold text-[18px] leading-[25px] tracking-widest mb-3`}
       >

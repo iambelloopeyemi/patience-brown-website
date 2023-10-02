@@ -4,11 +4,11 @@ import { cormorant } from "@/app/utils/font";
 export default function MeetPatience(): JSX.Element {
   return (
     <section className="px-5 sm:px-10 lg:px-20 py-16 lg:py-20">
-      <div className="grid lg:grid-cols-2 gap-10">
+      <div className="grid sm:grid-cols-2 gap-10 sm:gap-8">
         <article
           className={`${cormorant.className} font-medium flex flex-col justify-center gap-5`}
         >
-          <h2 className="text-[48px] leading-[58px] tracking-wide">
+          <h2 className="text-[28px] lg:text-[48px] leading-[34px] lg:leading-[58px] tracking-wide">
             Meet Patience
           </h2>
           <div className="text-[22px] leading-[23px] flex flex-col gap-4">

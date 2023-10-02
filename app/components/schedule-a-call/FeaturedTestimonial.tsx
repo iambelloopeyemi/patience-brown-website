@@ -6,14 +6,14 @@ export default function FeaturedTestimonial(): JSX.Element {
     <div className="flex flex-col gap-5">
       <div>
         <Image
-          src={`/patience-brown-1.jpg`}
-          alt={`picture of patience brown`}
+          src="/patience-brown-1.jpg"
+          alt="picture of patience brown"
           width={500}
           height={500}
         />
       </div>
       <blockquote
-        className={`${cormorant.className} font-medium italic text-[24px] leading-[32px]`}
+        className={`${cormorant.className} font-medium italic text-[22px] sm:text-[24px] leading-[29px] sm:leading-[32px]`}
       >
         “Simply put Alyson is the best of the best… I really enjoyed working
         with her. I will work with her again. She cares about what you are

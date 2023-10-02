@@ -5,7 +5,7 @@ import Button from "../Button";
 export default function Hero(): JSX.Element {
   return (
     <section className="bg-yinmn-blue grid lg:grid-cols-2">
-      <article
+      <div
         className={`col-span-1 px-5 sm:px-10 py-16 lg:py-28 ${cormorant.className} text-white flex flex-col justify-center gap-10`}
       >
         <h1 className="font-medium text-[38px] leading-[46px]">
@@ -18,7 +18,7 @@ export default function Hero(): JSX.Element {
         <div>
           <Button url="schedule-a-call" title="schedule a call" />
         </div>
-      </article>
+      </div>
       <div className="max-lg:hidden col-span-1 w-auto h-auto relative">
         <Image
           src="/patience-brown-1.jpg"
