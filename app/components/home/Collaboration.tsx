@@ -28,7 +28,7 @@ export default function Collaboration(): JSX.Element {
           </p>
           <ul className="mb-12">
             {props.map((prop, index: number) => (
-              <li key={index} className="flex items-baseline gap-2 mb-1">
+              <li key={index} className="flex items-baseline gap-4 mb-1">
                 <span className="block text-[8px]">
                   <FaCircle />
                 </span>
