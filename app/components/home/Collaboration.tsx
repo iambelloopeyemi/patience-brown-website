@@ -21,7 +21,9 @@ export default function Collaboration(): JSX.Element {
           <h4 className="font-medium text-[28px] lg:text-[48px] leading-[34px] lg:leading-[58px] mb-10">
             Let me ensure you share that message
           </h4>
-          <p className="text-yinmn-blue font-semibold uppercase text-[18px] leading-[25px] mb-2">
+          <p
+            className={`${montserrat.className} text-yinmn-blue font-semibold uppercase text-[18px] leading-[25px] mb-2`}
+          >
             together, we will:
           </p>
           <ul className="mb-12">
