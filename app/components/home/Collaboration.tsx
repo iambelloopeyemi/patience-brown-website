@@ -7,7 +7,7 @@ import Button from "../Button";
 export default function Collaboration(): JSX.Element {
   return (
     <section className={`px-5 sm:px-10 lg:px-20 py-16 ${cormorant.className}`}>
-      <div className="grid sm:grid-cols-2 gap-10 sm:gap-8">
+      <div className="grid sm:grid-cols-2 gap-10">
         <div className="flex justify-center items-center">
           <Image
             src="/patience-brown-2.jpg"
