@@ -62,6 +62,6 @@ export const ProcessInfoCard: InfoCardProps[] = [
     height: 80,
     heading: "WRITING & FINISHING",
     message:
-      "This is where you get to watch your vision come alive, page by page, sentence by sentence. The thing you&apos;ve been wanting to write, you get to see it written. After the work has been completed, your book, or any other written project, is fully yours. You and this ghostwriter will collaborate again—on your next project!",
+      "This is where you get to watch your vision come alive, page by page, sentence by sentence. The thing you've been wanting to write, you get to see it written. After the work has been completed, your book, or any other written project, is fully yours. You and this ghostwriter will collaborate again—on your next project!",
   },
 ];
