@@ -6,11 +6,12 @@ import "react-toastify/dist/ReactToastify.css";
 import * as Yup from "yup";
 import { validationSchema } from "@/app/utils/validationSchema";
 
-const EMAILJS_SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
-const EMAILJS_TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID;
-const EMAILJS_PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY;
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 interface ValidationErrorsProps {
+  [key: string]: string | undefined;
   firstName?: string;
   lastName?: string;
   email?: string;
@@ -84,7 +85,9 @@ export default function CallToActionForm(): JSX.Element {
       if (error instanceof Yup.ValidationError) {
         const errors: ValidationErrorsProps = {};
         error.inner.forEach((err: Yup.ValidationError) => {
-          errors[err.path] = err.message;
+          if (err.path) {
+            errors[err.path] = err.message;
+          }
         });
 
         setValidationErrors(errors);
