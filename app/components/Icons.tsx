@@ -1,4 +1,4 @@
-export function Bars(): JSX.Element {
+export function Bars() {
   return (
     <svg
       fill="none"
@@ -16,7 +16,7 @@ export function Bars(): JSX.Element {
   );
 }
 
-export function XMark(): JSX.Element {
+export function XMark() {
   return (
     <svg
       fill="none"

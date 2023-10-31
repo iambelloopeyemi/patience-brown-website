@@ -1,13 +1,15 @@
+import SectionContainer from "../SectionContainer";
+import SectionContentContainer from "../SectionContentContainer";
 import CallToAction from "./CallToAction";
 import FeaturedTestimonial from "./FeaturedTestimonial";
 
-export default function Container(): JSX.Element {
+export default function Container() {
   return (
-    <section className="px-5 sm:px-10 lg:px-20 py-16">
-      <div className="grid lg:grid-cols-2 gap-10">
+    <SectionContainer>
+      <SectionContentContainer>
         <CallToAction />
         <FeaturedTestimonial />
-      </div>
-    </section>
+      </SectionContentContainer>
+    </SectionContainer>
   );
 }

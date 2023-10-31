@@ -1,13 +1,14 @@
-import Image from "next/image";
-import { cormorant } from "@/app/utils/font";
+import SectionContainer from "@/app/components/SectionContainer";
+import SectionContentContainer from "@/app/components/SectionContentContainer";
+import SectionContent from "@/app/components/SectionContent";
+import patiencBrown from "@/app/assets/patience-brown-2.jpg";
+import SectionImage from "@/app/components/SectionImage";
 
-export default function MeetPatience(): JSX.Element {
+export default function MeetPatience() {
   return (
-    <section className="px-5 sm:px-10 lg:px-20 py-16 lg:py-20">
-      <div className="grid sm:grid-cols-2 gap-10">
-        <article
-          className={`${cormorant.className} font-medium flex flex-col justify-center gap-5`}
-        >
+    <SectionContainer>
+      <SectionContentContainer propsClassName="grid sm:grid-cols-2 gap-10">
+        <SectionContent propsClassName="font-medium flex flex-col justify-center gap-5">
           <h2 className="text-[28px] lg:text-[48px] leading-[34px] lg:leading-[58px] tracking-wide">
             Meet Patience
           </h2>
@@ -28,16 +29,9 @@ export default function MeetPatience(): JSX.Element {
             </p>
             <p>Patience and her husband live in Houston, Texas.</p>
           </div>
-        </article>
-        <div>
-          <Image
-            src="/patience-brown-2.jpg"
-            alt="picture of patience brown"
-            width={500}
-            height={500}
-          />
-        </div>
-      </div>
-    </section>
+        </SectionContent>
+        <SectionImage src={patiencBrown} />
+      </SectionContentContainer>
+    </SectionContainer>
   );
 }

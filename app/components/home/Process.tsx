@@ -1,33 +1,39 @@
-import { cormorant, montserrat } from "@/app/utils/font";
-import { ProcessInfoCard as props } from "@/app/data/HomePageData";
+import type { InfoCardProps } from "@/app/libs/types";
+import { cn } from "@/app/utils";
+import { montserrat } from "@/app/utils/font";
+import SectionContainer from "@/app/components/SectionContainer";
+import SectionContentContainer from "../SectionContentContainer";
 import InfoCard from "../InfoCard";
-import Button from "../Button";
+import Button from "../Button1";
 
-export default function Process(): JSX.Element {
+async function fetchProcesses(): Promise<InfoCardProps[]> {
+  const response = await fetch("http://localhost:3000/api/processes", {
+    next: { revalidate: 100 },
+  });
+  const processes: Promise<InfoCardProps[]> = response.json();
+  return processes;
+}
+
+export default async function Process() {
+  const data: InfoCardProps[] = await fetchProcesses();
+
   return (
-    <section className="bg-seasalt px-5 sm:px-10 lg:px-20 py-16 lg:py-20 text-center">
-      <div className="flex flex-col items-center gap-4 mb-12">
+    <SectionContainer sectionClassName="bg-seasalt text-center">
+      <SectionContentContainer propsClassName="flex flex-col items-center gap-4 mb-12">
         <p
-          className={`${montserrat.className} text-yinmn-blue font-semibold uppercase text-[18px] leading-[25px]`}
+          className={cn(
+            montserrat.className,
+            "text-yinmn-blue font-semibold uppercase text-[18px] leading-[25px]"
+          )}
         >
           the 3-step process to:
         </p>
-        <h4
-          className={`${cormorant.className} text-black font-medium text-[28px] lg:text-[48px] leading-[34px] lg:leading-[58px]`}
-        >
+        <h3 className="text-black font-medium text-[28px] lg:text-[48px] leading-[34px] lg:leading-[58px]">
           Get Your Book, Your Voice, Your message, Out There
-        </h4>
-      </div>
-      <ul className="grid lg:grid-cols-3 gap-[52px] lg:gap-[72px] mb-12">
-        {props.map(({ ...props }, index: number) => (
-          <li key={index} className="flex flex-col items-center">
-            <InfoCard {...props} />
-          </li>
-        ))}
-      </ul>
-      <div>
-        <Button url="/process" title="learn more" />
-      </div>
-    </section>
+        </h3>
+      </SectionContentContainer>
+      {data && <InfoCard data={data} />}
+      <Button link="/process">learn more</Button>
+    </SectionContainer>
   );
 }

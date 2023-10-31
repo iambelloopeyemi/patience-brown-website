@@ -1,22 +1,24 @@
-import { cormorant } from "@/app/utils/font";
-import { BeneficiaryInfoCard as props } from "@/app/data/HomePageData";
-import InfoCard from "../InfoCard";
+import type { InfoCardProps } from "@/app/libs/types";
+import SectionContainer from "@/app/components/SectionContainer";
+import InfoCard from "@/app/components/InfoCard";
 
-export default function Beneficiaries(): JSX.Element {
+async function fetchBeneficiaries(): Promise<InfoCardProps[]> {
+  const response = await fetch("http://localhost:3000/api/beneficiaries", {
+    next: { revalidate: 100 },
+  });
+  const beneficiaries: Promise<InfoCardProps[]> = response.json();
+  return beneficiaries;
+}
+
+export default async function Beneficiaries() {
+  const data: InfoCardProps[] = await fetchBeneficiaries();
+
   return (
-    <section
-      className={`bg-seasalt px-5 sm:px-10 lg:px-20 py-16 ${cormorant.className} text-center`}
-    >
-      <h3 className="text-[34px] leading-[34px] mb-[33px]">
+    <SectionContainer sectionClassName="bg-seasalt text-center">
+      <h2 className="text-[34px] leading-[34px] mb-[33px]">
         Who can benefit from a ghostwriter and book editor?
-      </h3>
-      <ul className="grid lg:grid-cols-3 gap-[52px] lg:gap-[72px]">
-        {props.map(({ ...props }, index: number) => (
-          <li key={index} className="flex flex-col items-center">
-            <InfoCard {...props} />
-          </li>
-        ))}
-      </ul>
-    </section>
+      </h2>
+      {data && <InfoCard data={data} />}
+    </SectionContainer>
   );
 }

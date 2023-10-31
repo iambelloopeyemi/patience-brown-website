@@ -1,10 +1,10 @@
 import Hero from "../components/Hero";
 import MeetPatience from "../components/about/MeetPatience";
-import Testimonial from "../components/Testimonial";
+import Testimonial from "../components/TestimonialContainer";
 import PreviousWork from "../components/about/PreviousWork";
 import Empowerment from "../components/Empowerment";
 
-export default function AboutPage(): JSX.Element {
+export default function AboutPage() {
   return (
     <>
       <Hero

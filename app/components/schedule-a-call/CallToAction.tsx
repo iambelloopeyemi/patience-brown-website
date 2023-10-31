@@ -1,9 +1,9 @@
-import { cormorant } from "@/app/utils/font";
 import CallToActionForm from "./CallToActionForm";
+import SectionContent from "@/app/components/SectionContent";
 
-export default function CallToAction(): JSX.Element {
+export default function CallToAction() {
   return (
-    <div className={`${cormorant.className}`}>
+    <SectionContent>
       <header className="mb-[34px]">
         <h2 className="font-medium text-[32px] sm:text-[36px] leading-[32px] sm:leading-[36px] mb-[10px]">
           Schedule a Call
@@ -14,6 +14,6 @@ export default function CallToAction(): JSX.Element {
         </p>
       </header>
       <CallToActionForm />
-    </div>
+    </SectionContent>
   );
 }

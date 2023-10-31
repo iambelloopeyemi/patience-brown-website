@@ -1,10 +1,8 @@
-import { cormorant } from "@/app/utils/font";
+import SectionContainer from "@/app/components/SectionContainer";
 
-export default function MessageToAudience(): JSX.Element {
+export default function MessageToAudience() {
   return (
-    <section
-      className={`bg-seasalt px-5 sm:px-10 lg:px-20 py-16 ${cormorant.className} text-center`}
-    >
+    <SectionContainer sectionClassName="bg-seasalt text-center">
       <h2 className="text-black text-[28px] lg:text-[48px] leading-[34px] lg:leading-[58px] mb-6">
         Get your message to the people in need of it
       </h2>
@@ -16,6 +14,6 @@ export default function MessageToAudience(): JSX.Element {
       <p className="text-[22px] lg:text-[28px] leading-[28px] lg:leading-[39px]">
         But with a ghostwriter to help write your book, your vision stays alive.
       </p>
-    </section>
+    </SectionContainer>
   );
 }

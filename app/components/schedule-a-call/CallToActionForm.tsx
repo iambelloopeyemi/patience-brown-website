@@ -1,272 +1,211 @@
 "use client";
-import { useState, FormEvent, ChangeEvent } from "react";
+import { useForm, SubmitHandler, type FieldValues } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import * as Yup from "yup";
-import { validationSchema } from "@/app/utils/validationSchema";
+import { cn } from "@/app/utils";
 
-const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
-interface ValidationErrorsProps {
-  [key: string]: string | undefined;
+type InputsProps = {
   firstName?: string;
   lastName?: string;
   email?: string;
   messageOrComment?: string;
-}
-
-const initialValidationErrors: ValidationErrorsProps = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  messageOrComment: "",
+  services: string[];
 };
 
-export default function CallToActionForm(): JSX.Element {
-  const [formData, setFormData] = useState({
-    firstName: "" as string,
-    lastName: "" as string,
-    email: "" as string,
-    messageOrComment: "" as string,
-    services: [] as string[],
+const EMAILJS_SERVICE_ID = "service_nyl12u1";
+const EMAILJS_TEMPLATE_ID = "template_llwfx3c";
+const EMAILJS_PUBLIC_KEY = "yT05oMkKAmsUE2SVV";
+
+const services: string[] = [
+  "Ghostwriting services",
+  "Book coaching services",
+  "Finding clarity to get started",
+  "Pricing",
+  "Other (describe below)",
+];
+
+export default function CallToActionForm() {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<InputsProps>({
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      messageOrComment: "",
+      services: [],
+    },
   });
-  const [validationErrors, setValidationErrors] =
-    useState<ValidationErrorsProps>(initialValidationErrors);
 
-  const handleCheckboxChange = (service: string): void => {
-    setFormData((prevData) => ({
-      ...prevData,
-      services: prevData.services.includes(service)
-        ? prevData.services.filter((option) => option !== service)
-        : [...prevData.services, service],
-    }));
-  };
+  const onSubmit: SubmitHandler<InputsProps> = async (data: FieldValues) => {
+    const { firstName, lastName, email, messageOrComment, services } = data;
 
-  const handleInputChange = (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ): void => {
-    const { name, value } = event.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const sendEmail = async (
-    event: FormEvent<HTMLFormElement>
-  ): Promise<void> => {
-    event.preventDefault();
+    const selectedServices: string = services
+      .map((isChecked: boolean, index: number) =>
+        isChecked ? services[index] : null
+      )
+      .filter((service: string) => service !== null)
+      .join(", ");
 
     const templateParams = {
-      from_name: `${formData.firstName} ${formData.lastName}`,
-      from_email: formData.email,
-      message: `Service(s): ${formData.services} - ${formData.messageOrComment}`,
+      from_name: `${firstName} ${lastName}`,
+      from_email: email,
+      message: `Service(s): ${selectedServices}: ${messageOrComment}`,
     };
-
     try {
-      await validationSchema.validate(formData, { abortEarly: false });
-
-      if (EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY) {
-        await emailjs.send(
-          EMAILJS_SERVICE_ID,
-          EMAILJS_TEMPLATE_ID,
-          templateParams,
-          EMAILJS_PUBLIC_KEY
-        );
-      }
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
       console.log(templateParams);
-      toast.success("Email sent successfully!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    } catch (error) {
-      if (error instanceof Yup.ValidationError) {
-        const errors: ValidationErrorsProps = {};
-        error.inner.forEach((err: Yup.ValidationError) => {
-          if (err.path) {
-            errors[err.path] = err.message;
-          }
+      if (templateParams) {
+        toast.success("Email sent successfully!", {
+          position: toast.POSITION.TOP_RIGHT,
         });
-
-        setValidationErrors(errors);
-
-        setTimeout(() => {
-          setValidationErrors(initialValidationErrors);
-        }, 5000);
-
-        console.error("Failed to send email.", error);
+      } else {
         toast.error("Failed to send email.", {
           position: toast.POSITION.TOP_RIGHT,
         });
       }
+    } catch (error) {
+      console.error("Failed to send email.", error);
     } finally {
-      if (templateParams) {
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          messageOrComment: "",
-          services: [],
-        });
-      }
+      reset();
     }
   };
 
-  const services: string[] = [
-    "Ghostwriting services",
-    "Book coaching services",
-    "Finding clarity to get started",
-    "Pricing",
-    "Other (describe below)",
-  ];
-
   return (
     <>
-      <form onSubmit={sendEmail}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <ul className="mb-5">
           <span className="block font-bold text-[16px] leading-[21px] mb-2">
             I&apos;d like more information about:
           </span>
           {services.map((service, index: number) => (
-            <li key={index} className="mb-2">
-              <div className="flex items-center gap-3">
-                <input
-                  type="checkbox"
-                  id={service}
-                  name={service}
-                  checked={formData.services.includes(service)}
-                  onChange={() => handleCheckboxChange(service)}
-                  className="block w-[14px] h-[14px]"
-                />
-                <label
-                  htmlFor={service}
-                  className="block text-[16px] leading-[21px]"
-                >
-                  {service}
-                </label>
-              </div>
+            <li key={index} className="flex items-center gap-3 mb-2">
+              <input
+                {...register(`services.${index}`)}
+                type="checkbox"
+                id={service}
+                value={service}
+                className="block w-[14px] h-[14px]"
+              />
+              <label
+                htmlFor={service}
+                className="block text-[16px] leading-[21px]"
+              >
+                {service}
+              </label>
             </li>
           ))}
         </ul>
         <div className="mb-[20px]">
-          <div className="mb-4">
-            <label
-              htmlFor="name"
-              className="block font-bold text-[16px] leading-[21px] after:content-['*'] after:ml-0.5 after:text-red-500 mb-1"
-            >
+          <label htmlFor="name" className="block mb-4">
+            <span className="block font-bold text-[16px] leading-[21px] after:content-['*'] after:ml-0.5 after:text-red-500 mb-1">
               Name
-            </label>
+            </span>
             <div className="flex max-sm:flex-col sm:items-center gap-5">
               <div>
                 <div
-                  className={`border w-[160px] h-[38px] px-[10px] py-[6px] flex justify-center items-center mb-[2px] ${
-                    validationErrors.firstName ? "border-red-500" : ""
-                  }`}
+                  className={cn(
+                    "border w-[160px] h-[38px] px-[10px] py-[6px] flex justify-center items-center mb-[2px]",
+                    errors.lastName && "border-red-500"
+                  )}
                 >
                   <input
+                    {...register("firstName", { required: true })}
                     type="text"
                     id="name"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleInputChange}
                     className="w-full h-full outline-none text-jet text-[16px] leading-[21px]"
                   />
                 </div>
-                {validationErrors.firstName && (
-                  <p className="text-red-500 text-[13px] leading-[17px]">
-                    {validationErrors.firstName}
-                  </p>
-                )}
                 <span className="block text-[13px] leading-[17px]">First</span>
               </div>
               <div>
                 <div
-                  className={`border w-[160px] h-[38px] px-[10px] py-[6px] flex justify-center items-center mb-[2px] ${
-                    validationErrors.lastName ? "border-red-500" : ""
-                  }`}
+                  className={cn(
+                    "border w-[160px] h-[38px] px-[10px] py-[6px] flex justify-center items-center mb-[2px]",
+                    errors.lastName && "border-red-500"
+                  )}
                 >
                   <input
+                    {...register("lastName", { required: true })}
                     type="text"
                     id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
                     className="w-full h-full outline-none text-jet text-[16px] leading-[21px]"
                   />
                 </div>
-                {validationErrors.lastName && (
-                  <p className="text-red-500 text-[13px] leading-[17px]">
-                    {validationErrors.lastName}
-                  </p>
-                )}
                 <span className="block text-[13px] leading-[17px]">Last</span>
               </div>
             </div>
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block font-bold text-[16px] leading-[21px] after:content-['*'] after:ml-0.5 after:text-red-500 mb-1"
-            >
+          </label>
+          <label htmlFor="email" className="block mb-4">
+            <span className="block font-bold text-[16px] leading-[21px] after:content-['*'] after:ml-0.5 after:text-red-500 mb-1">
               Email
-            </label>
+            </span>
             <div
-              className={`border w-[240px] sm:w-[340px] h-[38px] px-[10px] py-[6px] flex justify-center items-center ${
-                validationErrors.email ? "border-red-500" : ""
-              }`}
+              className={cn(
+                "border w-[240px] sm:w-[340px] h-[38px] px-[10px] py-[6px] flex justify-center items-center",
+                errors.email && "border-red-500"
+              )}
             >
               <input
-                type="email"
+                {...register("email", {
+                  required: true,
+                  pattern: {
+                    value:
+                      /^(?=.*@(gmail|yahoo|outlook)\.)[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Invalid email address",
+                  },
+                })}
+                type="text"
                 id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
                 className="w-full h-full outline-none text-jet text-[16px] leading-[21px]"
               />
             </div>
-            {validationErrors.email && (
+            {errors.email && (
               <p className="text-red-500 text-[13px] leading-[17px]">
-                {validationErrors.email}
+                {errors.email.message}
               </p>
             )}
-          </div>
-          <div>
-            <label
-              htmlFor="messageOrComment"
-              className="block font-bold text-[16px] leading-[21px] after:content-['*'] after:ml-0.5 after:text-red-500 mb-1"
-            >
+          </label>
+          <label htmlFor="messageOrComment">
+            <span className="block font-bold text-[16px] leading-[21px] after:content-['*'] after:ml-0.5 after:text-red-500 mb-1">
               Comment or Message
-            </label>
+            </span>
             <div
-              className={`border w-[240px] sm:w-[340px] h-[120px] px-[10px] py-[6px] flex justify-center items-center ${
-                validationErrors.messageOrComment ? "border-red-500" : ""
-              }`}
+              className={cn(
+                "border w-[240px] sm:w-[340px] h-[120px] px-[10px] py-[6px] flex justify-center items-center",
+                errors.messageOrComment && "border-red-500"
+              )}
             >
               <textarea
+                {...register("messageOrComment", {
+                  required: true,
+                })}
                 name="messageOrComment"
                 id="messageOrComment"
-                value={formData.messageOrComment}
-                onChange={handleInputChange}
                 className="w-full h-full outline-none text-jet text-[16px] leading-[21px]"
               />
             </div>
-            {validationErrors.messageOrComment && (
-              <p className="text-red-500 text-[13px] leading-[17px]">
-                {validationErrors.messageOrComment}
-              </p>
-            )}
-          </div>
+          </label>
         </div>
-        <div>
-          <button
-            type="submit"
-            className="bg-platinum px-[12px] sm:px-[15px] py-[8px] lg:py-[10px] hover:scale-105 ease-in-out"
-          >
-            <span className="text-jet text-[20px] sm:text-[22px]">Submit</span>
-          </button>
-        </div>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className={cn(
+            "bg-platinum px-[12px] sm:px-[15px] py-[8px] lg:py-[10px] hover:scale-105 ease-in-out",
+            isSubmitting && "opacity-50"
+          )}
+        >
+          <span className="text-jet text-[20px] sm:text-[22px]">Submit</span>
+        </button>
       </form>
       <ToastContainer />
     </>

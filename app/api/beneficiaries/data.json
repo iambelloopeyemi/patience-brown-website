@@ -1,0 +1,29 @@
+[
+  {
+    "src": "/preacher-icon.webp",
+    "alt": "preacher icon",
+    "width": 128,
+    "height": 128,
+    "heading": "PROFESSIONALS & SPEAKERS",
+    "message":
+      "Make your powerful speeches and wealth of experience into a life changing book that further testifies of your authority in your field, and reaches even more people"
+  },
+  {
+    "src": "/missionaries-icon.webp",
+    "alt": "missionaries icon",
+    "width": 128,
+    "height": 128,
+    "heading": "VISIONARIES",
+    "message":
+      "Sell your great vision to those whose support you need. Sell it to those who will be willing to run with it"
+  },
+  {
+    "src": "/volunteer-icon.webp",
+    "alt": "volunteer icon",
+    "width": 128,
+    "height": 128,
+    "heading": "CHANGE AGENTS",
+    "message":
+      "Turn your burning message into a compelling call to action. Get support for your cause"
+  }
+]

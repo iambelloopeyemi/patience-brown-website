@@ -1,4 +1,4 @@
-import { InfoCardProps } from "../utils/interface";
+import { CardProps } from "@/app/libs/types";
 
 export const StepOne: string[] = [
   "Define the Target Audience",
@@ -21,7 +21,7 @@ export const StepThree: string[] = [
   "She will provide insight and suggestions on how to further improve the book.",
 ];
 
-export const infoCardContent: InfoCardProps[] = [
+export const callToActionItems: CardProps[] = [
   {
     src: "/schedule-icon.webp",
     alt: "schedule icon",

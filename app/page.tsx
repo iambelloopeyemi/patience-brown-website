@@ -4,7 +4,7 @@ import Divider from "./components/home/Divider";
 import Beneficiaries from "./components/home/Beneficiaries";
 import Collaboration from "./components/home/Collaboration";
 import Process from "./components/home/Process";
-import Testimonial from "./components/Testimonial";
+import Testimonial from "./components/TestimonialContainer";
 import Consultation from "./components/home/Consultation";
 import Empowerment from "./components/Empowerment";
 

@@ -1,25 +1,24 @@
+"use client";
 import Link from "next/link";
-import { laila } from "../utils/font";
+import { cn } from "../utils";
+import { laila } from "@/app/utils/font";
 
-interface LogoProps {
+type LogoProps = {
   isScrolled?: boolean;
-}
+};
 
-export default function Logo({ isScrolled }: LogoProps): JSX.Element {
+export default function Logo({ isScrolled }: LogoProps) {
+  const defaultClassName =
+    "block font-semibold text-[30px] leading-[30px] transition-all duration-300 ease-in";
+
   return (
-    <Link href="/" className={`${laila.className}`}>
+    <Link href="/" className={cn(laila.className)}>
       {isScrolled ? (
-        <strong className="block font-semibold text-[30px] leading-[30px] transition-all duration-300 ease-in">
-          Brown Patience
-        </strong>
+        <strong className={cn(defaultClassName)}>Brown Patience</strong>
       ) : (
         <>
-          <strong className="block font-semibold text-[30px] leading-[30px] transition-all duration-300 ease-in">
-            Brown
-          </strong>
-          <strong className="block font-semibold text-[30px] leading-[30px] indent-8 transition-all duration-300 ease-in">
-            Patience
-          </strong>
+          <strong className={cn(defaultClassName)}>Brown</strong>
+          <strong className={cn(defaultClassName, "indent-8")}>Patience</strong>
         </>
       )}
     </Link>
