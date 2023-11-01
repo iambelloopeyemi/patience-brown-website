@@ -1,10 +1,10 @@
-import type { testimoniesProps } from "@/app/libs/types";
+import type { testimonialsProps } from "@/app/libs/types";
 import { cn } from "@/app/utils";
 
 type TestimonialButtonProps = {
   selectedTestimonyIndex: number;
   handleButtonClick: (index: number) => void;
-  data: testimoniesProps[];
+  data: testimonialsProps[];
 };
 
 export default function TestimonialButton({
