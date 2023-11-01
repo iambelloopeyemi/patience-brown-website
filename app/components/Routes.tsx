@@ -7,29 +7,20 @@ import { montserrat } from "@/app/libs/font";
 type RoutesProps = {
   ulClassName: string;
   liClassName: string;
-  checkIsActive?: boolean;
 };
 
-export default function Routes({
-  ulClassName,
-  liClassName,
-  checkIsActive,
-}: RoutesProps) {
+export default function Routes({ ulClassName, liClassName }: RoutesProps) {
   const routes = useRoutes();
 
   return (
     <ul className={ulClassName}>
       {routes.map((route) => {
-        const { link, linkIsActive, linkText } = route;
+        const { link, linkText } = route;
         return (
           <li key={link}>
             <Link
               href={`/${link}`}
-              className={cn(
-                montserrat.className,
-                liClassName,
-                checkIsActive && linkIsActive && "text-yinmn-blue"
-              )}
+              className={cn(montserrat.className, liClassName)}
             >
               {linkText}
             </Link>
