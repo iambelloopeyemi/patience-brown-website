@@ -1,16 +1,16 @@
-import { StepOne, StepTwo, StepThree } from "../data/ProcessPageData";
-import Hero from "../components/Hero";
-import ProcessOne from "../components/process/Process";
-import ProcessTwo from "../components/process/Process";
-import ProcessThree from "../components/process/Process";
-import Testimonial from "../components/TestimonialContainer";
-import CallToAction from "../components/process/CallToAction";
-import Empowerment from "../components/Empowerment";
+import Hero from "@/app/components/ui/Hero";
+import ProcessOne from "@/app/components/pages/process/Process";
+import ProcessTwo from "@/app/components/pages/process/Process";
+import ProcessThree from "@/app/components/pages/process/Process";
+import Testimonial from "@/app/components/ui/TestimonialContainer";
+import CallToAction from "@/app/components/pages/process/CallToAction";
+import Empowerment from "@/app/components/ui/Empowerment";
+import { StepOne, StepTwo, StepThree } from "../data";
 import patienceBrownPic2 from "@/app/assets/patience-brown-2.jpg";
 import patienceBrownPic3 from "@/app/assets/patience-brown-3.jpg";
 import workStation from "@/app/assets/work-station.webp";
 
-export default function ProcessPage(): JSX.Element {
+export default function ProcessPage() {
   return (
     <>
       <Hero

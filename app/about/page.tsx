@@ -1,8 +1,8 @@
-import Hero from "../components/Hero";
-import MeetPatience from "../components/about/MeetPatience";
-import Testimonial from "../components/TestimonialContainer";
-import PreviousWork from "../components/about/PreviousWork";
-import Empowerment from "../components/Empowerment";
+import Hero from "@/app/components/ui/Hero";
+import MeetPatience from "@/app/components/pages/about/MeetPatience";
+import Testimonial from "@/app/components/ui/TestimonialContainer";
+import PreviousWork from "@/app/components/pages/about/PreviousWork";
+import Empowerment from "@/app/components/ui/Empowerment";
 
 export default function AboutPage() {
   return (

@@ -1,5 +1,5 @@
 import FooterContainer from "./FooterContainer";
-import Logo from "@/app/components/Logo";
+import Logo from "@/app/components/ui/Logo";
 import Routes from "@/app/components/Routes";
 import Legal from "./Legal";
 import Copyright from "./Copyright";
